@@ -1,0 +1,29 @@
+---
+title: "Happy git"
+author: "Firstname Lastname"
+topic: "01"
+layout: post
+root: ../../../
+---
+
+## Background:
+
+git and Github are tools for helping with versioning of files in collaborative efforts as well as archiving entries for your future self. 
+Unfortunately working with git isn't always completely straightforward. 
+Jenny Bryan's book "Happy git and github with R" helps with that. The book is available from http://happygitwithr.com/.
+
+Write a blog post answering one of the following two questions: 
+
+1. **Which (base R) functions do you know that support the split-apply-combine strategy? In your opinion, are these sufficient - state why or why not?**. 
+2. **Using a dataset of your choice, describe how you can use the split-apply-combine strategy for a part of the data analysis.**
+
+
+## Instructions:
+
+Fork the 'blog-2019' repository 
+
+Save a **copy** of this file, replacing "Lastname" and "Firstname" with your own and *leave the original unedited*.
+
+In **your copy**, replace the `title:` and `author:` fields in the YAML above, while leaving the remaining fields intact. Remove the background and the instructions sections and write your blog post!
+
+Once you are done, **create a pull request** to upload your changes to the original repository!
