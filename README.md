@@ -16,4 +16,4 @@ Instead of deleting the forked repo and forking the other repo again, follow the
 
 # Topics
 
-1. [Working with git and github](https://github.com/stat585-at-ISU/blog/blob/master/01/LastnameFirstname.Rmd) - Due Jan 23
+1. [Working with git and github](https://github.com/stat585-at-ISU/blog-2019/blob/master/01/LastnameFirstname.Rmd) - Due Jan 23
