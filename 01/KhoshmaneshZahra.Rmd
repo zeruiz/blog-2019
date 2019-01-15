@@ -1,6 +1,6 @@
 ---
 title: "Happy git"
-author: "Firstname Lastname"
+author: "Zahra Khoshmanesh"
 topic: "01"
 layout: post
 root: ../../../
