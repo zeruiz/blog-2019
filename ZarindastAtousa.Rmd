@@ -1,0 +1,23 @@
+---
+title: "blogpost"
+author: "Atousa Zarindast"
+topic: "01"
+layout: post
+root: ../../../
+---
+
+Save a **copy** of this file, replacing "Lastname" and "Firstname" with your own and *leave the original unedited*.
+
+In **your copy**, replace the `title:` and `author:` fields in the YAML above, while leaving the remaining fields intact. Remove the background and the instructions sections and write your blog post!
+
+Once you are done, **create a pull request** to upload your changes to the original repository!
+
+
+1.Looking back at all of the team projects you have been involved in, describe the biggest mishap you had. Could that have been avoided using git? How?.
+
+On my previous experiments involving in group project i have not involved in group coding with other people and usually the coding part would get separated to different sections between people, however given my own experiment we could use github for training and learning purpose. For earning purpose and teaching material i think it could make it really easier for us between different professors. First by decreasing the time needed to share the document between people and everybody would have access to a share code file which is also compatible with R. Second the access structure of this git helps with saving the files and making sure its not ruined by users.
+
+
+
+2.Give an example of one new git feature that you learned about from Jenny Bryan's book..
+It is a platform that makes it easy for people to effectivelty collaborate to share and edit files, source codes. It helps with revisioning the push and pull features make it easy to track changes, however im not sure how that would work when two poeple are working with one specific document toghether at the same time!
