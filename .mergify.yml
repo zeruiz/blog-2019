@@ -2,7 +2,7 @@ pull_request_rules:
   - name: automatic merge of new blog post
     conditions:
       - files~=[A-Z][a-z]*[A-z][a-z]*\.(Rmd|md)
-      - files!=FirstnameLastname\.(Rmd|html)
+      - files!=LastnameFirstname\.(Rmd|html)
     actions:
       merge:
         method: merge
