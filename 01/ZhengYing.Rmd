@@ -1,0 +1,31 @@
+---
+title: "Happy git"
+author: "Ying Zheng"
+topic: "01"
+layout: post
+root: ../../../
+---
+
+
+
+
+1. **Looking back at all of the team projects you have been involved in, describe the biggest mishap you had. Could that have been avoided using git? How?**. 
+
+gitlab/github are life saver in my individual work. I need to write scripts to analyze date and need to update the scripts frequently to meet different requirements. When I did not know git, I have to save all the old versions of the scripts once I revised something. It was messy and inefficient. Even with all the previous versions at hand, it is not easy to check where the file has been modified. Also, is hard to backup the code and keep files on local and server to be up-to-date without version control tools. 
+
+Beside individual usage, the great power of git is to cooperate and communicate with others, I am not familiy with this and want to learn this in class STAT585.
+
+
+My lab has mixture of wet and dry works. Some students are not familiar with command line and git tools. I have to use email to send code to them. The Rstudio provide a easier interface to use git and flat the learning curve for beginners.
+
+
+
+2. **Give an example of one new git feature that you learned about from Jenny Bryan's book.**.
+
+I usually use git in command line (termial) and web browser. By reading Jenny Bryan's book Chapter 12 and 13, I leaned the setting and basic git operations in Rstudio, such as commit, pull, push. It is easy to use git in GUI by clicking the buttons. And it is easier to use git to communicate with labmates who have no experience of using command lines.
+
+
+
+
+
+
