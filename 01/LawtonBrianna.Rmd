@@ -1,0 +1,33 @@
+---
+title: "STAT585_Blog#1_BL"
+author: "Brianna Lawton"
+date: "January 23, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Question 1:Looking back at all of the team projects you have been involved in, describe the biggest mishap you had. Could that have been avoided using git? How?
+```{r}
+#The biggest mishap I have had was twofold. One problem was difficulty trying to merge everyone's parts under one document with the same format, the other problem was 
+
+```
+
+## Question 2: Give an example of one new git feature that you learned about from Jenny Bryan's book..
+One new git feature I learned about from Jenny Bryan's book was 
+
+```{r}
+#
+
+```
+
+## Including Plots
+
+
+```{r}
+
+
+```
+
