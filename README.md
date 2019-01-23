@@ -5,7 +5,7 @@
 **You can create a new file in a github repository by clicking on the `Create new file` or `Upload files` button.**
 ![](images/create-file.png)
 3. Write your blog post in the copy of the file.
-4. Create a pull request to upload your work to this repository.
+4. Create a pull request to upload your work to this repository. Do not commit the HTML file!
 
 # Advanced instructions
 
