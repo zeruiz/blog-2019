@@ -23,6 +23,7 @@ The base function support split-apply-combine includes apply(), sapply(), tapply
 
 I choose the Titanic dataset as an example to explore the replationship between class and survived status.
 
+
 ```{r}
 library(tidyverse)
 library(ggplot2)
