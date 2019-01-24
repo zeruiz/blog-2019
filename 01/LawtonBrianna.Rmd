@@ -1,5 +1,5 @@
 ---
-title: "STAT585_Blog#1_BL"
+title: "STAT 585 Blog #1"
 author: "Brianna Lawton"
 date: "January 23, 2019"
 output: html_document
@@ -11,23 +11,23 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Question 1:Looking back at all of the team projects you have been involved in, describe the biggest mishap you had. Could that have been avoided using git? How?
 ```{r}
-#The biggest mishap I have had was twofold. One problem was difficulty trying to merge everyone's parts under one document with the same format, the other problem was 
+#The biggest mishap I have had from working on team projects was proof of team members' work and responsibilities--to keep accountable each individual's contribution. Also, difficulty merging each team member's parts under one document with the same format.
+#I think these mishaps could have been avoided using git because git allows all team members to work collaboratively by editing and updating a shared document/program at the same time. Git also leaves a trail of what updates/changes a team member has made--making it easier to follow; who did what and when. 
 
 ```
 
-## Question 2: Give an example of one new git feature that you learned about from Jenny Bryan's book..
-One new git feature I learned about from Jenny Bryan's book was 
+## Question 2: Give an example of one new git feature that you learned about from Jenny Bryan's book.
 
 ```{r}
-#fffhjfjmg
+#A couple new git features I learned about from Jenny Bryan's book was: 
 
-```
+#How to make changes locally to a file, then "commit" aka save your updates, then push back your changes to the owner you forked it fromm.
 
-## Including Plots
+#How to use the git feature “fork and clone” to get a copy of someone else’s repo. This is good if there’s any chance you will want to propose a change to the owner's original work.
 
+#Another nice git feature is just "cloning" someone else’s repository on GitHub when you just want a copy. This feature is very nice because you can also track the repository evolution. 
 
-```{r}
-
+#What differentiates "forking" and 'cloning" is the idea of downloading someone's repo at a specific point in time and not receiving any new updates.It is harder to keep a fork updated than a clone because the primary remote associated with your local is your fork but you need to get the new commits from the repository you originally forked. 
 
 ```
 
