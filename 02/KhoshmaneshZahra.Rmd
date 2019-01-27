@@ -9,8 +9,8 @@ root: ../../../
 In this post, I want to answer the following questions based on the Hadley Wickham paper, "The Split-Apply-Combine Strategy for Data
 Analysis" and my experience and underestanding of the subject.
 
-1. **Which (base R) functions do you know that support the split-apply-combine strategy? In your opinion, are these sufficient - state why or why not?**. 
-2. **Using a dataset of your choice, show (by including the split-apply-combine command(s) in your answer) how you can use the split-apply-combine strategy for a part of the data analysis.**
+1. Which (base R) functions do you know that support the split-apply-combine strategy? In your opinion, are these sufficient - state why or why not?**. 
+2. Using a dataset of your choice, show (by including the split-apply-combine command(s) in your answer) how you can use the split-apply-combine strategy for a part of the data analysis.**
 
 
 
