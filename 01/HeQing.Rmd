@@ -16,11 +16,11 @@ Write a blog post answering the following questions:
 
 1. **Looking back at all of the team projects you have been involved in, describe the biggest mishap you had. Could that have been avoided using git? How?**. 
 
-The biggest mishap was when one of the team member did not complete the work as promised and refused help. This is not something git can help to resolve. But, the git can make the cooperation of coding easier and much more efficient by avoiding sending codes to collaborators through cloud or email. 
+The biggest mishap was that it was difficult to check the team members progress, which makes it difficult to control the project progress. The git can make the cooperation of coding easier and much more efficient by avoiding sending codes to collaborators back and forth through cloud or email, and it can be synced while coding, which will make the coding progress more transparent to team members. 
 
 
 2. **Give an example of one new git feature that you learned about from Jenny Bryan's book.**.
-Github is new to me. The way github synic files are efficient since it can be done during the coding. Moreover, new files will not override the previous files, all changes are stored and easily pulled out for future self.
+Github is new to me. The way github sync files are efficient since it can be done during the coding. Moreover, new files will not override the previous files, all changes are stored and easily pulled out for future self.
 
 ## Instructions:
 
