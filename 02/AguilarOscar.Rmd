@@ -19,7 +19,7 @@ Write a blog post addressing the questions:
 
 There are some base `R` functions that support the split-apply-combine strategy such as `subset()`, `split()`, `by()`, `apply()`, `sapply()`, `lapply()`, `tapply()`, `aggregate()`, `rbind()`, and `cbind()`. These functions can tackle any task  as `plyr`. However, in some scenarios, these functions can take slow down your program when they are using in big loops.
 
-
+My personal opinion is that the base `R` function mentioned in the previous paragraph are sufficient because they get the job done. On the other hand, from the computing time, it's better to use function from `plyr` such as `ddply`. Also, these function are more intuite, which makes your code easier to read/follow when share with others. 
 
 
 
