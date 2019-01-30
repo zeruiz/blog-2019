@@ -47,7 +47,7 @@ print(sales_data)
 #step3: combine the results into a datastructure
 sales_data%>%
   group_by(color)%>%
-  summarise(totalSales = sum(sales),medianTrans=median(transactions),count=n())
+  dplyr::summarize(totalSales = sum(sales),medianTrans=median(transactions),count=n())
 
 
 ```
