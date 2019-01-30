@@ -10,7 +10,7 @@ root: ../../../
 
 **1. Which (base R) functions do you know that support the split-apply-combine strategy? In your opinion, are these sufficient - state why or why not?**
 
-In base R, *lapply* family use the split-apply-combine strategy. These functions are fast, convenient, and extract the important idea from loop and replace *for loop* in many cases. But they are not sufficient, because :
+In base R, *lapply* family use the split-apply-combine strategy. These functions are fast, convenient, and extract the important idea from loop and replace *for loop* in many cases. But they are not sufficient, because:
 
 1. They are not consistent. Most functions have the first argument as data, however, *Map* has the first argument as a function. And there are other incosistencies too in the sense of *simplify* and *sapply-vapply* variant.
 
