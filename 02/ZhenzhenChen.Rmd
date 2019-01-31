@@ -1,0 +1,34 @@
+---
+title: "Split apply combine ..."
+author: "Zhenzhen Chen"
+topic: "02"
+layout: post
+root: ../../../
+---
+
+
+1. **Which (base R) functions do you know that support the split-apply-combine strategy? In your opinion, are these sufficient - state why or why not?**. 
+
+There are some R function that can support the split-apply-combine strategy,such as "split()", "apply()", "tapply()", 
+"aggregate()" etc.
+
+
+2. **Using a dataset of your choice, show (by including the split-apply-combine command(s) in your answer) how you can use the split-apply-combine strategy for a part of the data analysis.**
+
+I accessed a built-in dataset that calls chickwts. 
+```{r}
+attach(chickwts)
+wm <- tapply(weight, feed,  mean) 
+wsd <- tapply(weight,  feed, sd)
+```
+
+If using the `plyr` package,
+```{r}
+library(tidyverse); library(plyr);
+
+ddply(chickwts, .(feed), summarise, mean = mean(weight), sd = sd(weight))
+```
+
+
+
+
