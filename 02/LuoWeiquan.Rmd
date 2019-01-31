@@ -6,18 +6,6 @@ layout: post
 root: ../../../
 ---
 
-## Background:
-
-## Prompt:
-
-
-The `plyr` package has by now been replaced by other, even faster packages, but the idea of *Split, apply, combine* is as relevant as ever.
-
-Read the paper [The Split-Apply-Combine Strategy for Data Analysis](https://www.jstatsoft.org/article/view/v040i01) by Hadley Wickham.
-
-
-Write a blog post addressing the questions: 
-
 1. **Which (base R) functions do you know that support the split-apply-combine strategy? In your opinion, are these sufficient - state why or why not?**. 
 
 List of base R functions supporting the split-apply-combine strategy:
