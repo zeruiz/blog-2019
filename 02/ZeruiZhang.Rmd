@@ -19,6 +19,8 @@ Write a blog post addressing the questions:
     ```{r, include=FALSE}
     library(tidyverse)
     ```
+    
+    
     ```{r}
     data("USArrests")
     head(USArrests)
