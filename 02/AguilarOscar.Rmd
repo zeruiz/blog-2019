@@ -1,0 +1,66 @@
+---
+title: "Split apply combine ..."
+author: "Oscar Aguilar"
+topic: "02"
+layout: post
+root: ../../../
+---
+
+## Background:
+
+The `plyr` package has by now been replaced by other, even faster packages, but the idea of *Split, apply, combine* is as relevant as ever.
+
+Read the paper [The Split-Apply-Combine Strategy for Data Analysis](https://www.jstatsoft.org/article/view/v040i01) by Hadley Wickham.
+
+
+Write a blog post addressing the questions: 
+
+1. **Which (base R) functions do you know that support the split-apply-combine strategy? In your opinion, are these sufficient - state why or why not?**. 
+
+There are some base `R` functions that support the split-apply-combine strategy such as `subset()`, `split()`, `by()`, `apply()`, `sapply()`, `lapply()`, `tapply()`, `aggregate()`, `rbind()`, and `cbind()`. These functions can tackle any task  as `plyr`. However, in some scenarios, these functions can take slow down your program when they are using in big loops.
+
+My personal opinion is that the base `R` function mentioned in the previous paragraph are sufficient because they get the job done. On the other hand, from the computing time, it's better to use function from `plyr` such as `ddply`. Also, these function are more intuite, which makes your code easier to read/follow when share with others. 
+
+
+
+2. **Using a dataset of your choice, show (by including the split-apply-combine command(s) in your answer) how you can use the split-apply-combine strategy for a part of the data analysis.**
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+I'm going to use the data set called `airquality` from the dataset `R` package. This data set contains information related to daily air quality measurements in New York from May to September in 1973. We first print the first six observation of the data set.
+
+```{r}
+data("airquality")
+airquality %>% head()
+```
+
+Note that value 5 in `Month` represents observations associated to May. Also, the values 1 to 31 in `Day` represents the day of the month. A common question is to compare the average temperatues during those months.  
+
+```{r}
+airquality %>% 
+  group_by(Month) %>%
+    summarise(ave_temperature = mean(Temp, na.rm = T))
+```
+
+From the above output, July and August are the months with the highest average temperatures. Next, we would like to know what day had the highest and lowest temperature during those two months. 
+
+```{r}
+airquality %>% 
+  filter(Month %in% c(7, 8)) %>%
+    group_by(Month) %>%
+      summarise(min_temp = min(Temp, na.rm = T), 
+                max_temp = max(Temp, na.rm = T))
+          
+```
+
+Another question that one may have is: what is the relationship between wind and temperature. 
+
+```{r message = FALSE}
+airquality %>% ggplot(aes(x = Wind, y = Temp)) + geom_point() + geom_smooth()
+```
+
+From the above graph, as overall, there is a negative relationship between wind and temperature.
+
