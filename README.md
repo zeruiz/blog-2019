@@ -17,3 +17,6 @@ Instead of deleting the forked repo and forking the other repo again, follow the
 # Topics
 
 1. [Working with git and github](https://github.com/stat585-at-ISU/blog-2019/blob/master/01/LastnameFirstname.Rmd) - Due Jan 23
+2. [Split-apply-combine...](https://github.com/stat585-at-ISU/blog-2019/blob/master/02/LastnameFirstname.Rmd) - Due Jan 30
+3. [Ethics and Reproducibility...](https://github.com/stat585-at-ISU/blog-2019/blob/master/03/LastnameFirstname.Rmd) - Due Feb 6
+
