@@ -1,6 +1,6 @@
 ---
 title: "Ethics and Reproducibility..."
-author: "Firstname Lastname"
+author: "Xin Zhang"
 topic: "03"
 layout: post
 root: ../../../
