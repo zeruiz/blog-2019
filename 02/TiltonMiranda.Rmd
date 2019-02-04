@@ -1,0 +1,60 @@
+---
+title: "Blog 2: Split apply combine ..."
+author: "Miranda Tilton"
+topic: "02"
+layout: post
+root: ../../../
+---
+
+```{r}
+library(magrittr)
+library(tidyverse)
+```
+
+1. **Which (base R) functions do you know that support the split-apply-combine strategy? In your opinion, are these sufficient - state why or why not?**. 
+
+Base R has a number of functions that support the split-apply-combine strategy: split(), apply() (and others in the apply family, such as lapply(), sapply(), etc.), and aggregate() are probably the most relevant examples. The apply() family allows functions to be applied over groups of data, but these functions are typically simple, named functions and only one is applied at a time. The aggregate() and sweep() functions allow summary statistics to be computed using groups in a data frame, but again only accepts one summary function per call to the aggregate() function.
+
+In general, I do believe that base R functions and graphics are "sufficient" in many ways. That is, they usually get the job done in one way or another. However, they are often not the easiest or most elegant solution, especially for complex or novel tasks (such as highly specific graphics), and other packages (like dplyr) provide functions that offer more flexibility and readability. 
+
+2. **Using a dataset of your choice, show (by including the split-apply-combine command(s) in your answer) how you can use the split-apply-combine strategy for a part of the data analysis.**
+
+For my short analysis, I will use the midwest dataset included in ggplot2, which provides demographic information for five midwestern states: Illinois, Indiana, Michigan, Ohio, and Wisconsin. The number of counties reporting for each state can is in the table below (found by grouping by state and applying a count function).
+
+```{r}
+midwest <- ggplot2::midwest
+head(midwest)
+
+midwest %>% group_by(state) %>%
+  summarize(n = n())
+```
+
+The midwest is anecdotally infamous for its subtle perpetuation of racial prejudice through systemic injustice, such as unequal opportunity to housing (especially in suburbs) and more physical segregation of living areas. In the plot below, I examine the populations of each state by the proportion of each race recorded in the data (i.e., white, black, Asian, American Indian, and other). There are data reported for each county, so We split the dataset by state to create five main subgroups. We then apply a sum across the populations of each race and combine using gather() for plotting. The resulting plot below shows Illinois as the largest state by population and Wisconsin as the smallest, but also that the proportion of non-white individuals is smallest in Wisconsin. Indiana is also small, and it appears that Illinois has the largest proportion of non-white individuals.
+
+```{r}
+midwest %>%
+  group_by(state) %>%
+  summarise(white = sum(popwhite),
+            black = sum(popblack),
+            amerindian = sum(popamerindian),
+            asian = sum(popasian),
+            other = sum(popother)) %>%
+  gather(key = race,
+         value = quantity, 
+         white, black, amerindian, asian, other) %>%
+  ggplot() + 
+  geom_col(aes(x = state, y = quantity, fill = fct_inorder(race)),
+                      position = position_stack(reverse = T)) +
+  labs(fill = "race")
+```
+
+To see whether there truly is disparity between race affluence, we compute the correlation between percent of non-white individuals in a state and the percent of people living in poverty, using the county-wise data within each state. We use group_by() to split and summarise() to apply the correlation function, and then display the output as one combined table to compare values. Ohio shows no correlation between race and poverty, but the other four states show decidedly positive correlations. Interestingly, Wisconsin has the largest correlation between non-white population and poverty of the states reported, and the correlation larger by quite a significant margin.
+
+```{r}
+midwest %>%
+  mutate(perc_nonwhite = percblack + percamerindan + percasian + percother) %>%
+  group_by(state) %>% 
+  summarise(cor_pov_race = cor(percbelowpoverty, perc_nonwhite))
+```
+
+This analysis does not claim to represent any absolute truth about the midwest or its residents, as it is purely observational and I have not explored any other covariates that may further inform the relationship above. However, it does provide strong motivation for further exploration and suggests that there is much progress to be made with supporting people of color in the midwest.
