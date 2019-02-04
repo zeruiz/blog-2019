@@ -1,9 +1,12 @@
 ---
 title: "STAT 585 Blog #1"
 author: "Brianna Lawton"
-date: "January 23, 2019"
-output: html_document
+topic: "01"
+layout: post
+root: ../../../
 ---
+
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)

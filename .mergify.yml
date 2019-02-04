@@ -1,16 +1,25 @@
 pull_request_rules:
   - name: Reject merge of new blog post
     conditions:
-      - files~=[\d{2}]/LastnameFirstname\.(Rmd|html)
+      - files~=[\d{2}]/LastnameFirstname\.(rmd|Rmd)
     actions:
       label:
-        add: modifies-template
+        add: ['modifies-template']
       comment:
         message: You cannot modify the LastnameFirstname.Rmd file. Try again, but only modify the file with your name this time.
+  - name: Reject merge of new blog post
+    conditions:
+      - files~=(.gitignore)|(.Rproj)|(.Rprofile)
+    actions:
+      label:
+        add: ['illegal-files']
+      comment:
+        message: Do not push gitignore or Rproject or Rprofile files. 
   - name: automatic merge of new blog post
     conditions:
-      - files~=[\d{2}]/[A-Z][a-z]{1,}[A-z][a-z]{1,}\.(Rmd|md)
+      - files~=[\d{2}]/[A-Z][a-z]{1,}[A-z][a-z]{1,}\.(Rmd|md|rmd)
       - label!=modifies-template
+      - label!=illegal-files
     actions:
       merge:
         method: merge
