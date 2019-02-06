@@ -41,7 +41,8 @@ p1 <- ggplot(data=summarise(group_by(ptp, sem_name), tot_reg = length(registriat
             plot.title = element_text(hjust = 0),
             axis.text.y = element_text(angle = 90, hjust = .1), legend.position="none") + 
       labs(title = "Number of Registriation from 2013 to 2018", x = "Semester", y = "Count total", size = NULL, color = NULL)
-    
-plotline <- ggplotly(p1, tooltip = "text", source = "lineplot")
-plotline
+ 
+p1   
+#plotline <- ggplotly(p1, tooltip = "text", source = "lineplot")
+#plotline
 ```
