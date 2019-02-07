@@ -7,20 +7,60 @@ root: ../../../
 ---
 
 
-**Describe what intervals, durations, periods, and instants are, and give one example for each that shows why we need these distinctions.**
+#Describe what intervals, durations, periods, and instants are, and give one example for each that shows why we need these distinctions.
 
-**The `ggplot2` package works seamlessy with lubridate. Find a data set with dates and/or times, use lubridate to work with the dates/times, then plot a time-related aspect of the data and describe it.**  
+Interesting.
 
+**Durations** represent exact number of seconds. To convert to larger units, they use a standard convertion rate.  
+*How long can I hold my breath?*
+I want to know the exact amount of seconds. Whether it is a leap year is irrelevant. 
 
-## Instructions:
-Update your forked repo of `blog-2019`. 
+**Periods** are human units (weeks/months) 
+*How many months does it take you to write a paper?*
+This is not an exact value, but rather a general value that is best represented in month chunks. 
 
-To make your life easier, create an RStudio project on your local machine that is linked to your github repo. 
+**Intervals** have a starting and ending point and operate in human units. 
+*How long is the spring semester?*
+It starts on Jan X and ends on May X. 
 
-Save a **copy** of this file, replacing "Lastname" and "Firstname" with your own and *leave the original unedited*.
+#The `ggplot2` package works seamlessy with lubridate. Find a data set with dates and/or times, use lubridate to work with the dates/times, then plot a time-related aspect of the data and describe it.**  
 
-In **your copy**, replace the `title:` and `author:` fields in the YAML above, while leaving the remaining fields intact. Remove the background and the instructions sections and write your blog post!
+We'll do the typical one - NYC flights. 
+```{r dates dataset, echo=FALSE, include = FALSE}
+library(tidyverse)
+library(lubridate)
+library(nycflights13)
+```
+```{r look at flights}
+dat <- flights
+head(flights)
+names(flights)
+```
 
-Push the changes from your local machine to your github repo. 
+Yuck. It has lots of *date-y* things. Let's see if any origins have become more popular by month
 
-Once you are done, **create a pull request** to upload your changes to the original repository!
+```{r time plot}
+flights %>%
+  group_by(month, origin) %>%
+  summarise(n = n()) %>%
+  ggplot(aes(month, n)) + 
+  geom_line(aes(color = origin))
+
+```
+
+The months are labeled weird, I'd rather have the words. 
+
+```{r time plot 2}
+
+flights %>%
+  mutate(month2 = month(month, label = T)) %>%
+  group_by(month2, origin) %>%
+  summarise(n = n()) %>%
+  
+  ggplot(aes(month2, n)) + 
+  geom_point(aes(color = origin))
+
+```
+
+But now it won't connect them with a line. Oh well. At least they are in the right order. 
+
