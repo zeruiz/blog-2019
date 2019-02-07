@@ -19,6 +19,38 @@ Read the paper [The Split-Apply-Combine Strategy for Data Analysis](https://www.
 Write a blog post addressing the questions: 
 
 1. **Which (base R) functions do you know that support the split-apply-combine strategy? In your opinion, are these sufficient - state why or why not?**. 
+
+I use "with" and "split" functions to split, "lapply" to apply, and "aggregate" to combine. No, they not sufficint. I think that using other functions of plyr would be useful. 
+
 2. **Using a dataset of your choice, show (by including the split-apply-combine command(s) in your answer) how you can use the split-apply-combine strategy for a part of the data analysis.**
+
+```{r, data}
+employee <- c('Yones','Daniel','Josh', "Meyer")
+research_interest <- c("ML", "ML", "PM", "PM")
+startdate <- as.Date(c('2010-11-1','2010-11-10','2010-11-10','2010-11-20'))
+salary <- c(12000,10000,9000,5000)
+employ.data <- data.frame(employee, research_interest, startdate,salary)
+employ.data
+```
+
+```{r split}
+# First, we split the count column by the spray column.
+RI_by_groups <- with(employ.data, split(research_interest, groups))
+RI_by_groups
+```
+
+```{r apply}
+# Secondly, we apply the statistic to each element of the list. Lets use the mean here.
+mean_by_salary <- lapply(salary, mean)
+mean_by_salary
+```
+
+```{r combine}
+# Combine date with salary
+combine <- aggregate(salary ~ startdate, employ.data, mean)
+combine
+```
+
+
 
 
