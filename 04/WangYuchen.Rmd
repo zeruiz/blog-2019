@@ -1,0 +1,58 @@
+---
+title: "Interesting times..."
+author: "Yuchen Wang"
+topic: "04"
+layout: post
+root: ../../../
+---
+
+- Describe what intervals, durations, periods, and instants are, and give one example for each that shows why we need these distinctions.
+-Instant: a specific time
+```{r message=FALSE, warning=FALSE}
+library(lubridate)
+library(tidyverse)
+example_instant <- ymd_hms("2019-01-01 18:00:00")
+is.instant(example_instant)
+```
+
+-Intervals: the time between two specific times.
+```{r}
+example_interval <- ymd_hms("2019-02-01 17:00:00") - ymd_hms("2019-01-01 18:00:00")
+example_instant + example_interval
+```
+
+-Durations: time span (interval) in specific unit "seconds".
+```{r}
+example_duration <- as.duration(example_interval)
+example_duration
+```
+
+-Periods: time span (interval) in other units which are larger than seconds.
+```{r}
+example_period <- as.period(example_interval)
+example_period
+```
+
+
+- The `ggplot2` package works seamlessy with lubridate. Find a data set with dates and/or times, use lubridate to work with the dates/times, then plot a time-related aspect of the data and describe it.  
+```{r}
+ames_weather <- read_csv("https://raw.githubusercontent.com/Stat585-at-ISU/materials-2019/master/data/Ames_weather_2017-2018.csv")
+ames_weather <- ames_weather %>%
+  na.omit() %>%
+  mutate(date = ymd(date),
+         year = year(date),
+         month = month(date),
+         day = day(date))
+
+ames_18 <-ames_weather %>%
+  filter(year == 2018) %>%
+  filter(weather == "Clear.") %>% 
+  group_by(month) %>%
+  summarize(
+        count = n(),
+        mean_wind = mean (wind))
+ames_18 %>%
+  ggplot(aes(x=as.factor(month),y=mean_wind,size = count,color = count)) + geom_point(position = "dodge") + labs (title = "Clear Days in 2018", x = "Month", y = "MeanWind" ) 
+```
+It looks like there is no relationship between the mean wind speed and the amount of clear days in every month.
+
