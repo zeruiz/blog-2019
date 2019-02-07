@@ -6,23 +6,6 @@ layout: post
 root: ../../../
 ---
 
-## Prompt:
-
-
-In May 2015 Science retracted - without consent of the lead author - a paper on  how canvassers can sway people's opinions about gay marriage, 
-see also: http://www.sciencemag.org/news/2015/05/science-retracts-gay-marriage-paper-without-agreement-lead-author-lacour
-The Science Editor-in-Chief cited as reasons for the retraction that the original survey data was not made available for independent reproduction of results, that survey incentives were misrepresented and that statements made about sponsorships turned out to be incorrect.<br>
-The investigation resulting in the retraction was triggered by two  Berkeley grad students who attempted to replicate the study and discovered that the data must have been faked.
- 
-[FiveThirtyEight](https://fivethirtyeight.com/features/how-two-grad-students-uncovered-michael-lacour-fraud-and-a-way-to-change-opinions-on-transgender-rights/) has published an article with more details on the two Berkeley students' work.
-
-Malicious changes to the data such as in the LaCour case are hard to prevent, but more rigorous checks should be built into the scientific publishing system. All too often papers have to be retracted for unintended reasons. [Retraction Watch](https://retractionwatch.com/) is a data base that keeps track of retracted papers (see the related [Science magazine](https://www.sciencemag.org/news/2018/10/what-massive-database-retracted-papers-reveals-about-science-publishing-s-death-penalty) publication). 
-
-Read the paper [Ten Simple Rules for Reproducible Computational Research](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003285) by Sandve et al.
-
-
-Write a blog post addressing the questions: 
-
 1. **Pick one of the papers Retraction Watch features on their website and describe what went wrong**. 
 
 ## Q1 Response
@@ -44,21 +27,5 @@ Link to retracted article: https://www.cdc.gov/mmwr/volumes/65/wr/mm6525a1.htm
 
 ## Q2 Response
 
-After reading the paper, "Ten Simple Rules for Reproducible Computational Research" by Sandve et al., I am most likely to follow rule # X because
-
-
-After reading the paper, I find rule # X probably the hardest to follow (and will likely not follow) for future projects because  
-
-
-
-
-
-## Instructions:
-
-Update your forked version of the 'blog-2019' repository (or re-fork it after deleting your previous repo).
-
-Save a **copy** of this file, replacing "Lastname" and "Firstname" with your own and *leave the original unedited*.
-
-In **your copy**, replace the `title:` and `author:` fields in the YAML above, while leaving the remaining fields intact. Remove the background and the instructions sections and write your blog post! 
-
-Once you are done, **create a pull request** to upload your changes to the original repository. Do not commit the compiled HTML file to the repository.
+After reading the paper, "Ten Simple Rules for Reproducible Computational Research" by Sandve et al., I am most likely to follow Rule #1: For Every Result, Keep Track of How It Was Produced because I am a very detailed person and I already have a habit of writing down or documenting my workflow process of how I came to achieve something. 
+After reading the paper, I find Rule #2: Avoid Manual Data Manipulation Steps to be hard to follow for because sometimes I can be very convetional and not rely on the updated, efficient method of solving a problem. I will learn to make a habit of avoiding manual data manipulation due to human error that could disrupt or cause errors later down the road in my project study. 
