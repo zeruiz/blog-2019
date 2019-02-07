@@ -22,12 +22,3 @@ Write a blog post addressing the questions:
 2. **Using a dataset of your choice, show (by including the split-apply-combine command(s) in your answer) how you can use the split-apply-combine strategy for a part of the data analysis.**
 
 
-## Instructions:
-
-Update the 'blog-2019' repository 
-
-Save a **copy** of this file, replacing "Lastname" and "Firstname" with your own and *leave the original unedited*.
-
-In **your copy**, replace the `title:` and `author:` fields in the YAML above, while leaving the remaining fields intact. Remove the background and the instructions sections and write your blog post! 
-
-Once you are done, **create a pull request** to upload your changes to the original repository. Do not commit the compiled HTML file to the repository.
