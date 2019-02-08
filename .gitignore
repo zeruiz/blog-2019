@@ -2,3 +2,10 @@
 .Rhistory
 .RData
 .Ruserdata
+<<<<<<< HEAD
+.html
+.gitignore
+=======
+.Rproj
+*/*.html
+>>>>>>> a90a15a8f8acb68205a62cfe60400e9021188686

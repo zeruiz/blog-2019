@@ -1,0 +1,83 @@
+---
+title: "Split apply combine ..."
+author: "Joshua Budi"
+root: ../../../
+layout: post
+topic: '02'
+---
+
+## Background:
+
+The `plyr` package has by now been replaced by other, even faster packages, but the idea of *Split, apply, combine* is as relevant as ever.
+
+Read the paper [The Split-Apply-Combine Strategy for Data Analysis](https://www.jstatsoft.org/article/view/v040i01) by Hadley Wickham.
+
+
+Write a blog post addressing the questions: 
+
+1. **Which (base R) functions do you know that support the split-apply-combine strategy? In your opinion, are these sufficient - state why or why not?**. 
+The ones I can think of right of the bat is just by selecting a specific level/category of a variable by using `df$var` type of call, then save it as its own variable. Other than that, I have gotten used to using `select` or `filter` functions in dplyr. 
+As the paper suggests, it might be very challenging, or even impossible to do this when working on 3-dimensional dataset or other datasets that includes different data structures input. 
+
+
+2. **Using a dataset of your choice, show (by including the split-apply-combine command(s) in your answer) how you can use the split-apply-combine strategy for a part of the data analysis.**
+
+```{r results='hide'}
+library(MASS)
+data("UScereal")
+head(UScereal)
+str(UScereal)
+levels(UScereal$vitamins)
+selected <- subset(UScereal, select=c(mfr,vitamins, sugars))
+head(selected)
+unique(selected$mfr)
+```
+using base R to split-apply
+```{r}
+
+sugarsG <- subset(selected, mfr=="G", select="sugars")
+sugarsG.mean <- mean(sugarsG$sugars)
+
+```
+
+check length of the vector whether subset is done correctly
+
+```{r}
+length(sugarsG$sugars)
+```
+
+continue for the rest of the manufacturers
+```{r}
+
+sugarsK <- subset(selected, mfr=="K", select="sugars")
+sugarsK.mean<- mean(sugarsK$sugars)
+sugarsN <- subset(selected, mfr=="N", select="sugars")
+sugarsN.mean <- mean(sugarsN$sugars)
+sugarsP <- subset(selected, mfr=="P", select="sugars")
+sugarsP.mean <- mean(sugarsP$sugars)
+sugarsQ <- subset(selected, mfr=="Q", select="sugars")
+sugarsQ.mean <-  mean(sugarsQ$sugars)
+sugarsR <- subset(selected, mfr=="R", select="sugars")
+sugarsR.mean <-  mean(sugarsR$sugars)
+```
+compute means data frame
+```{r}
+
+mfr.means <- data.frame(mfr=c("Gen Mills","Kelloggs","Nabisco","Post","Quaker","Ralston Purina"),
+      sugars_mean=c(sugarsG.mean, sugarsK.mean, sugarsN.mean, sugarsP.mean, sugarsQ.mean, sugarsR.mean))
+
+mfr.means
+```
+
+
+using dplyr, much shorter 
+```{r message=FALSE}
+library(dplyr)
+```
+
+```{r}
+mfr.means.dplyr <- selected %>% group_by(mfr)%>%
+  summarise(mean=mean(sugars))
+
+mfr.means.dplyr 
+```
