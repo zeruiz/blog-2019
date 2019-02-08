@@ -1,0 +1,22 @@
+---
+title: "Interesting times..."
+author: "Yones Khaledian"
+topic: "04"
+layout: post
+root: ../../../
+---
+
+
+## Background:
+
+Dates and times can be difficult to work with. Watch [this video](https://www.youtube.com/watch?v=-5wpm-gesOY) to appreciate all of the fun scenarios that date/time libraries have to accommodate. 
+
+Luckily, the `lubridate` package makes working with dates and times in R pretty straightforward. The package has been described in the paper [Working with date and time](http://www.jstatsoft.org/v40/i03/) by Garrett Grolemund and Hadley Wickham, an updated version of an intro to lubridate can be found in chapter 16 of [R for Data Science](https://r4ds.had.co.nz/dates-and-times.html). Read one of the two sources.
+
+Write a blog post addressing the questions:
+
+
+- Describe what intervals, durations, periods, and instants are, and give one example for each that shows why we need these distinctions.
+- The `ggplot2` package works seamlessy with lubridate. Find a data set with dates and/or times, use lubridate to work with the dates/times, then plot a time-related aspect of the data and describe it.  
+
+
