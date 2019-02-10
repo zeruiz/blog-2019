@@ -70,16 +70,5 @@ lakers %>%
 
 ```
 
-## Instructions:
-Update your forked repo of `blog-2019`. 
 
-To make your life easier, create an RStudio project on your local machine that is linked to your github repo. 
-
-Save a **copy** of this file, replacing "Lastname" and "Firstname" with your own and *leave the original unedited*.
-
-In **your copy**, replace the `title:` and `author:` fields in the YAML above, while leaving the remaining fields intact. Remove the background and the instructions sections and write your blog post!
-
-Push the changes from your local machine to your github repo. 
-
-Once you are done, **create a pull request** to upload your changes to the original repository!
 
