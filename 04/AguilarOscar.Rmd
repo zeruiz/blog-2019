@@ -9,7 +9,7 @@ root: ../../../
 
 ## Describe what intervals, durations, periods, and instants are, and give one example for each that shows why we need these distinctions.
 
-*Instants* represent a point in time. On the other hand,  *Intervals* represent a span of time with a specific beginning instant and a specific end instant. *Durations* refer to length of time recorded in seconds. *Periods* refer to a span of time in a unit larger than a second. Periods are not of a consistent length since periods such as months and years are not of a consistent length.
+*Instants* represent a point in time. On the other hand,  *Intervals* represent a span of time with a specific beginning instant and a specific end instant. *Durations* refer to length of time recorded in seconds. *Periods* refer to a span of time in a unit larger than a second. Periods are not of a consistent length since periods such as months and years are not of a consistent length. Without these distinctions, arithmetic with date-time data would be very difficult. For example, the length of an interval can vary depending on whether the duration or the period was recorded. The inconsistencies in lengths of time spans can occur for many reasons such as leap years/seconds, varying number of days in different months, or daylight savings time.  
 
 
 ## The `ggplot2` package works seamlessy with lubridate. Find a data set with dates and/or times, use lubridate to work with the dates/times, then plot a time-related aspect of the data and describe it.  
