@@ -1,0 +1,16 @@
+---
+title: "Interesting times..."
+author: "Oscar Aguilar"
+topic: "04"
+layout: post
+root: ../../../
+---
+
+
+## Describe what intervals, durations, periods, and instants are, and give one example for each that shows why we need these distinctions.
+
+
+## The `ggplot2` package works seamlessy with lubridate. Find a data set with dates and/or times, use lubridate to work with the dates/times, then plot a time-related aspect of the data and describe it.  
+
+
+
