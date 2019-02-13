@@ -1,0 +1,75 @@
+---
+title: "Interesting times..."
+author: "Yawei Ge"
+topic: "04"
+layout: post
+root: ../../../
+---
+
+```{r include=FALSE}
+library(tidyverse)
+library(lubridate)
+```
+
+**1. Describe what intervals, durations, periods, and instants are, and give one example for each that shows why we need these distinctions.**
+
+The "duration" is an exact number of seconds;
+
+The "period"" is a time span denoted by human units, i.e, year, month, day, etc; 
+
+The "interval" is a "period" with a specified starting point and/or ending point.
+
+###Duration
+
+When we are calulating with time span for scientic purpose, or pure mathematical calculation which doesn't contain any human units within the process, we need "duration", for it is consistent in transforming year and day, i.e, 1 year = 365 days, and has consistent unit as second, which is more predictable in this case.
+
+```{r}
+#duration
+ddays(1)
+2*dyears(1)
+dweeks(1) - dseconds(10000)
+```
+
+###Period
+
+However, if we are doing data analysis and transforming date and time with human units, we want to explictly know what date/time our data points represent, we will need "period"" to do that. 
+
+```{r}
+#period
+days(3) + hours(4) + seconds(10)
+3*(years(4) + months(3))
+```
+
+###Interval
+
+And if we have to take into consideration about leap year and DST etc, we must specify a particular starting point or ending point and use "interval" in this case.
+
+```{r}
+#interval
+today() %--% (today() + years(5))
+(today() %--% (today() + years(5))) / days(1)/365
+#because of leap year, not exact 5
+```
+
+Whenever possible, use the simplest one that satisfying your purpose.
+
+**2. The ggplot2 package works seamlessy with lubridate. Find a data set with dates and/or times, use lubridate to work with the dates/times, then plot a time-related aspect of the data and describe it.**
+
+###Average sales of houses in TX, 2013
+
+We can see from the following plot that there is a clear seasonal trend in the year. From January, the lowest point, the sales go up all the way until May and stay at the peak(more than twice in sales compared to the lowest point) until August and then go down again. So we may need to take this into consideration when doing analysis with house sales using this dataset.
+
+```{r}
+data("txhousing")
+head(txhousing)
+
+txhousing <- txhousing %>%
+  mutate(new_date = make_date(year, month))
+
+txhousing %>%
+  filter(!is.na(volume), year == 2013) %>%
+  group_by(new_date) %>%
+  mutate(avg_volume = mean(volume)) %>%
+  ggplot(aes(x = new_date, y = avg_volume)) + 
+  geom_line()
+```
