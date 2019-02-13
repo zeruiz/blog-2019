@@ -1,0 +1,88 @@
+---
+title: "Interesting times..."
+author: "Gani Agadilov"
+output:
+  pdf_document: default
+  word_document: default
+root: ../../../
+layout: post
+topic: '04'
+---
+
+Question 1
+
+- Describe what intervals, durations, periods, and instants are, and give one example for each that shows why we need these distinctions.
+
+From the paper "Dates and Times Made Easy with lubridate" and Chapter 16 of "R for Data Science", some definitions are given for the different type of time formats.
+
+Instant. An instant is a specific moment in time. For instance, February 11th, 2019. There are three types of date/time data that represents an instant type: date, time within the day and date-time.
+```{r}
+require(lubridate)
+today()
+now()
+date()
+```
+
+Interval. An interval is a span of time that occurs between two specific instants. For example, how many weeks from February 11th in 2019 to February 11th in 2020. Intervals have a starting and ending point.
+```{r}
+future1 <- today() + years(1)
+(today() %--% future1) /weeks(1)
+```
+
+Duration. If we record the time span in seconds, we will have durations. For instance, duration of 10 minutes is 600s.
+
+```{r}
+dminutes(10)
+age <- today() - ymd(19880704)
+age
+as.duration(age)
+```
+
+Period. Periods record a time span in units larger than seconds, such as years, months, weeks, days, hours, and minutes. For example, period of 5 weeks is 35 days 0 hours 0 minutes 0 seconds.
+```{r}
+weeks(5)
+days(5) + hours(5) + minutes(5)
+```
+
+Question 2
+
+- The `ggplot2` package works seamlessy with lubridate. Find a data set with dates and/or times, use lubridate to work with the dates/times, then plot a time-related aspect of the data and describe it.  
+
+I have used the dataset AirPassengers which indicates a number of international airline passengers between 1949 and 1960.  The dataset was given in time series format. By using the fortify command, I changed to the accessible form. In order to see a number of airline users for each day of the week, we add the days of each flight and plot with a number of passengers. There was a clear pattern that all days had the almost same amount of passengers. As we can see from the second plot, there was the seasonality that indicates a maximum amount of the passengers during in July-August months.
+```{r}
+library(lubridate)
+library(ggplot2)
+library(tidyverse)
+library(ggfortify)
+
+data <- fortify(AirPassengers)
+str(data)
+data %>% 
+  mutate(wday = wday(data$Index, label = TRUE)) %>% 
+  ggplot(aes(x = wday)) +
+    geom_bar()
+ 
+data %>%
+  ggplot(aes(x = data$Index)) +
+  geom_line(aes(y = data$Data), colour = "blue", size = 2)+
+  xlab("Flight date") +
+  ylab("Number of passengers")+
+  theme_bw()
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
