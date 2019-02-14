@@ -1,0 +1,79 @@
+---
+title: "Interesting times..."
+author: "Zerui Zhang"
+output: pdf_document
+root: ../../../
+layout: post
+topic: '04'
+---
+
+```{r, include=FALSE}
+library(ggplot2)
+library(lubridate)
+library(dplyr)
+```
+
+
+## 1. Describe what intervals, durations, periods, and instants are, and give one example for each that shows why we need these distinctions.
+
+    
+Instant: a specific moment in time.
+
+```{r}
+ now <- now()
+ now
+ is.instant(now)
+```
+  
+  
+Duration: an exact number of seconds. It is a generic time span measuring the length of time so it can add to any date.
+
+```{r}
+duration <- duration(240)
+duration
+then <- now + duration
+then
+is.duration(duration)
+is.duration(then)
+```
+    
+Interval: a specific duration with a starting point. So it is a span of time that occurs between two specific instants and it cannot be used for calculations.
+
+```{r}
+ymd_hms(then) - ymd_hms(now)
+is.interval(ymd_hms(then) - ymd_hms(now))
+intvl <- interval(ymd_hms("2019-01-01 12:00:00"),ymd_hms("2018-01-01 12:00:00"))
+intvl
+is.interval(intvl)
+```
+    
+Period: human units for a time span like weeks and months.
+
+```{r}
+as.period(intvl)
+```
+
+These different terms may play different roles in our analysis work. Instant is like a basic element to store a specific time, and we can use period to help us read the length of the time. Duration is helpful for calcualtions and interval is directly related to a specific event which has starting and ending time.
+
+
+
+
+## 2. The `ggplot2` package works seamlessy with lubridate. Find a data set with dates and/or times, use lubridate to work with the dates/times, then plot a time-related aspect of the data and describe it. 
+
+```{r}
+data(economics)
+head(economics)
+
+dat <- economics
+dat %>% 
+  mutate(year = year(date), month = month(date), day = day(date)) %>% 
+  filter(year > 1967) %>% 
+  filter(unemploy/pop <= mean(unemploy/pop)) %>% 
+  ggplot(., aes(x=date, y=unemploy/pop)) + 
+  geom_point(aes(colour=uempmed)) +
+  theme_bw() + ylim(0.01, 0.04)
+  labs(y = "unemployment rate", colour = "Median time for \n unemployment")
+```
+
+We filter out 1967 since it only has data for half of the year. This plot trys to find those times with rather low unemployment rate and short period of unemployment. We can see there are fluctuations for the unemployment rate with the time, and the lasting time for unemployment tends to increase.
+
