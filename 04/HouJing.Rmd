@@ -48,7 +48,6 @@ budget %>% ggplot(aes(x=month(`Release Date`, label=TRUE))) + geom_bar()
 budget %>% ggplot(aes(x=wday(`Release Date`, label=TRUE))) + geom_bar()
 ```
 
-
 December had the largest number of movies released during a year. The majority of movies were released on Friday in a week.
 
 ```{r}
@@ -60,7 +59,6 @@ budget %>%
   ggplot(aes(x = month)) + geom_bar() +
   facet_wrap(~year)
 ```
-
 
 In generally, December had the largest number of movies released during 2000-2017, especially in 2015. Surprisedly, the number of movies was decreased in 2016 and 2017.
 
