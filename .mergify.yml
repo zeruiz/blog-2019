@@ -33,9 +33,19 @@ pull_request_rules:
         message: Do not push Rprofile files. 
   - name: automatic merge of new blog post
     conditions:
-      - files~=[\d{2}]/(Mc)?[A-Z][a-z]{1,}[A-Z][a-z]{1,}\.(Rmd|md|rmd)
+      - files~=[\d{2}]/(Mc)?[A-Z][a-z]{1,}[A-Z][a-z]{1,}\.(Rmd|rmd)
       - label!=modifies-template
       - label!=illegal-files
     actions:
+      merge:
+        method: merge
+  - name: automatic merge of new blog post (with number warning)
+    conditions:
+      - files~=[\d{2}]/(Mc)?[A-Z][a-z]{1,}[A-Z][a-z]{1,}[\d{0,}]\.(Rmd|rmd)
+      - label!=modifies-template
+      - label!=illegal-files
+    actions:
+      comment:
+        message: There should not be any numbers in your blog file name. Please adhere to the LastnameFirstname.Rmd scheme.
       merge:
         method: merge
