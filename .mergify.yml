@@ -33,10 +33,9 @@ pull_request_rules:
         message: Do not push Rprofile files. 
   - name: automatic merge of new blog post
     conditions:
-      - files~=[\d{2}]/[A-Z][a-z]{1,}[A-Z][a-z]{1,}\.(Rmd|md|rmd)
+      - files~=[\d{2}]/(Mc)?[A-Z][a-z]{1,}[A-Z][a-z]{1,}\.(Rmd|md|rmd)
       - label!=modifies-template
       - label!=illegal-files
     actions:
       merge:
         method: merge
-        strict: true
