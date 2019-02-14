@@ -17,7 +17,7 @@ library(ggplot2)
 
 Lubridate comes in handy when dealing with data that includes dates and times. Lubridate allows arithmetic xxx to take place yielding both relative and exact units in the output using the following objects. 
 
-Instants are specific moments in time. For example if you want to know the current time and date in your time zone use ...XXXX
+Instants are specific moments in time. For example if you want to know the current time and date in your time zone use:
 ```{r}
 start_2019 <- ymd_hms("2019-01-01 12:00:00")
 
@@ -28,7 +28,7 @@ date
 * The following classes represent ways of analyzing different timespans.
 
 Durations record timespan measured in an exact number of seconds.Durations are good for estimating large timespans in seconds that we as humans may not know or use to seeing commonly by outputting the numbe rof seconds followed by parenthesis of the estimated length in days or weeks or year.
-For example, if you want to know...XXX
+For example, if you want to know how many seconds in a certain number of minutes or how many weeks is a certain number of seconds:
 ```{r}
 duration(60)
 
@@ -36,7 +36,7 @@ dweeks(1) + ddays(6) + dhours(2) + dminutes(1.5) + dseconds(3)
 ```
 
 Intervals are the most simple method of recording timespans.Intervals represent a start and end point or two specific intstants.Intervals are durations with a starting point that makes it precise so you can determine exactly how long the interval is. Intervals are not too useful for date-time calculations.
-For example, if you want to know .....XXX
+For example, if you want to know the amount of time difference between years in units days:
 ```{r}
 start_2019 <- ymd_hms("2019-01-08 12:00:00")
 start_2019
@@ -46,7 +46,7 @@ span <- start_2019 - start_2018
 span
 ```
 Periods are non-exact timespans that output a length of units that vary over time depending on when it begins. Periods are good for recording timespans in units larger than seconds like minutes or months.Periods represent "human" units like minutes, hours, days, weeks, and months-timespans with no fixed length in seconds. Periods can accurately model clock times without knowing when events like leap second or leap days  or DST changes occur.
-For example, if you want to know ...XXX
+For example, if you want to know what year and date will it be in the next 3 years:
 
 ```{r}
 start_2019 + years(3)
