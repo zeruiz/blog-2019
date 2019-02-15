@@ -1,0 +1,70 @@
+---
+title: "Interesting times..."
+author: "Hana Lee"
+topic: "04"
+layout: post
+root: ../../../
+---
+
+Write a blog post addressing the questions:
+
+
+- Describe what intervals, durations, periods, and instants are, and give one example for each that shows why we need these distinctions.
+
+Time spans can be represented by the following classes with `lubridate`: durations, periods, and intervals.
+
+- Durations represent a time span in seconds.
+- Periods represent a time span in human units such as in weeks and in months.
+- Intervals represent a starting and ending points of a time span.
+
+Let's take look at the examples for the three classes. How old is STAT 585 class of 2019 since its first lecture started?
+
+```{r message = FALSE, warning = FALSE}
+library(lubridate)
+stat.585.begin <- ymd_hms("2019-01-14 16:10:00", tz = "America/Chicago")
+stat.585.age <- now(tz = "America/Chicago") - 
+                stat.585.begin
+
+(duration <- as.duration(stat.585.age))
+
+(period <- today(tz = "America/Chicago") - date(stat.585.begin))
+
+(interval <- stat.585.begin %--% now(tz = "America/Chicago"))
+interval / ddays(1)
+```
+
+
+
+- The `ggplot2` package works seamlessy with lubridate. Find a data set with dates and/or times, use lubridate to work with the dates/times, then plot a time-related aspect of the data and describe it.  
+
+
+#### Import data
+```{r message = FALSE, warning = FALSE}
+library(tidyverse)
+dat.url <- "https://raw.githubusercontent.com/hnlee1428/Initial-stat-585/master/DEXKOUS.csv"
+dat <- read.csv(dat.url, header = TRUE)
+head(dat)
+str(dat)
+```
+
+#### Manipulate a variable related to date
+```{r message = FALSE, warning = FALSE}
+d <- dat %>% 
+  mutate(DATE = ymd(as.character(DATE)),
+         `South Korean Won to One U.S. Dollar` = as.numeric(as.character(DEXKOUS))) %>%
+  select(-DEXKOUS)
+#warning message doesn't matter
+str(d)
+head(d)        
+```
+
+#### Plot of South Korean Won to One U.S. Dollar from 2017 to now
+```{r message = FALSE, warning = FALSE}
+d %>%
+  filter(ymd(20190213)>DATE & DATE>ymd(20161231)) %>%
+  ggplot(aes(x = DATE,
+             y = `South Korean Won to One U.S. Dollar`)) +
+  geom_line() + geom_point()
+```
+
+It appears that the value of South Korean Won to One U.S.D. was relatively higher from the end of 2017 to June 2018. I remember that I hesitated to exchange Korean Won for my stipend during the time frame since I expected more benefit by the value difference as time goes. However, I missed the chance, and couldn't get the chance again up to now.
