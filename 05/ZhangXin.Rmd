@@ -1,1 +1,39 @@
 
+---
+title: "More on Reproducibility..."
+author: "Firstname Lastname"
+topic: "05"
+layout: post
+root: ../../../
+---
+
+
+## Prompt:
+
+Read through 
+
+- Roger Peng's [initial editorial](https://doi.org/10.1093/biostatistics/kxp014), 
+
+- [Keiding's response](https://doi.org/10.1093/biostatistics/kxq033),
+
+- its five [commentaries](https://academic.oup.com/biostatistics/issue/11/3),  
+
+- Roger Peng's [response to Keiding](https://doi.org/10.1093/biostatistics/kxq032)
+
+- and finally, Keiding's [response to the commentaries](https://doi.org/10.1093/biostatistics/kxq034)
+
+Don't worry about the number of papers listed - these papers are all very short and easy reads. 
+
+
+Write a blog post addressing the questions: 
+
+1. **Answer each of the following questions with at least 2-3 sentences.**
+
+    1. **Summarize Roger Peng's outline for reproducibility in** *Biostatistics*. 
+    2. **What are Keiding's main criticisms of the proposal?**. 
+    3. **Which point in the commentaries speaks to you the most? Why?**
+    4. **How does Keiding respond to the commentary you picked. What are his main points in his response?**
+    
+2. **Describe your experience with a data intensive (collaborative) project. What are the most prominent issues with ensuring reproducibility of research results (focus on data related aspects)? What would you do differently if you could go back in time?**
+
+
