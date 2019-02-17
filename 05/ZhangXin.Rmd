@@ -49,17 +49,15 @@ Write a blog post addressing the questions:
        
        3) It is important to make the 'interdisciplinary group of researchers to understand the substantive context and the strengths and weaknesses of the data.' 
        
-       4) 'The original substantive collaborators make themselves available as partners in reanalyses, and some might put this as a condition for releasing the data'
+       4) 'The original substantive collaborators make themselves available as partners in reanalyses, and some might put this as a condition for releasing the data.'
     
     3. **Which point in the commentaries speaks to you the most? Why?**
     
-    
-    
+    I'm interested in the commentary given by D. R. Cox and Christl Donnelly. They suggests that instead of just reproducing the analyzing results, it would be more important to the formulate and investigate new problems with related subject-matter specialists. This would be more often if the data are fully provided.
     
     4. **How does Keiding respond to the commentary you picked. What are his main points in his response?**
     
-    
-    
+    Keilding agrees with D. R. Cox and Christl Donnelly's opinion. He thinks it is encouraged to make data availible.
     
     
 2. **Describe your experience with a data intensive (collaborative) project. What are the most prominent issues with ensuring reproducibility of research results (focus on data related aspects)? What would you do differently if you could go back in time?**
