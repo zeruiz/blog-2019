@@ -41,7 +41,15 @@ Write a blog post addressing the questions:
     
     2. **What are Keiding's main criticisms of the proposal?**. 
     
+    Keiding agrees that it is necessary to make sure that the statistical calculations is reproducible. But he thinks that there are some issues are more important than the correctness of calculations. He encourages statisticians to deeply understand 'the substantive contex' of the problem, instead of just repeating the analysis for old datasets. Kieding gives the following points:
     
+       1) Reseach should be more inductive or “problem-driven,” which requires 'a collaboration between substantive scientists and statisticians has identified a substantive problem that requires new statistical methodology for its satisfactory solution.' This means that we'd better not focu on reproduing the analysis on old datasets.
+       
+       2) 'It is impractical to devise a reanalysis template that can capture this whole process.' Kieding thinks that it is necessary to deeply understand the underlying story before reaching the conclusions.
+       
+       3) It is important to make the 'interdisciplinary group of researchers to understand the substantive context and the strengths and weaknesses of the data.' 
+       
+       4) 'The original substantive collaborators make themselves available as partners in reanalyses, and some might put this as a condition for releasing the data'
     
     3. **Which point in the commentaries speaks to you the most? Why?**
     
