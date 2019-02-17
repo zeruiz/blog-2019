@@ -30,10 +30,31 @@ Write a blog post addressing the questions:
 1. **Answer each of the following questions with at least 2-3 sentences.**
 
     1. **Summarize Roger Peng's outline for reproducibility in** *Biostatistics*. 
+    
+    In Roger Peng's paper, three dimensions of reproducibility have been proposed:
+       
+       1) Data: The data should be accessible online and the auther should get the permission before distributing the data.
+       
+       2) Code: The auther should provide the information about the software and related codes.
+       
+       3) Reproducible: The Associate Editor for reproducibility will re-run the code and the work will be accepted if the re-run results is the same or almost the same as the results in the work.
+    
     2. **What are Keiding's main criticisms of the proposal?**. 
+    
+    
+    
     3. **Which point in the commentaries speaks to you the most? Why?**
+    
+    
+    
+    
     4. **How does Keiding respond to the commentary you picked. What are his main points in his response?**
+    
+    
+    
+    
     
 2. **Describe your experience with a data intensive (collaborative) project. What are the most prominent issues with ensuring reproducibility of research results (focus on data related aspects)? What would you do differently if you could go back in time?**
 
+Last year, I had a team project on analyzing US precipitation data. We shared the code within the team but we found that we could not reach the same results. Then we took a very long time to exam the code and found that in the code there is a step to generate spatial block. However, the generation of the blocks is randomly conducted. And we didnt' specify a seed for it. This cause the differences. From then on, I would set a seed for the code associated with randomness.
 
