@@ -1,0 +1,66 @@
+---
+title: "Interesting times..."
+author: "Virginia Nichols"
+topic: "04"
+layout: post
+root: ../../../
+---
+
+
+#Describe what intervals, durations, periods, and instants are, and give one example for each that shows why we need these distinctions.
+
+Interesting.
+
+**Durations** represent exact number of seconds. To convert to larger units, they use a standard convertion rate.  
+*How long can I hold my breath?*
+I want to know the exact amount of seconds. Whether it is a leap year is irrelevant. 
+
+**Periods** are human units (weeks/months) 
+*How many months does it take you to write a paper?*
+This is not an exact value, but rather a general value that is best represented in month chunks. 
+
+**Intervals** have a starting and ending point and operate in human units. 
+*How long is the spring semester?*
+It starts on Jan X and ends on May X. 
+
+#The `ggplot2` package works seamlessy with lubridate. Find a data set with dates and/or times, use lubridate to work with the dates/times, then plot a time-related aspect of the data and describe it.**  
+
+We'll do the typical one - NYC flights. 
+```{r dates dataset, echo=FALSE, include = FALSE}
+library(tidyverse)
+library(lubridate)
+library(nycflights13)
+```
+```{r look at flights}
+dat <- flights
+head(flights)
+names(flights)
+```
+
+Yuck. It has lots of *date-y* things. Let's see if any origins have become more popular by month
+
+```{r time plot}
+flights %>%
+  group_by(month, origin) %>%
+  summarise(n = n()) %>%
+  ggplot(aes(month, n)) + 
+  geom_line(aes(color = origin))
+
+```
+
+The months are labeled weird, I'd rather have the words. 
+
+```{r time plot 2}
+
+flights %>%
+  mutate(month2 = month(month, label = T)) %>%
+  group_by(month2, origin) %>%
+  summarise(n = n()) %>%
+  
+  ggplot(aes(month2, n)) + 
+  geom_point(aes(color = origin))
+
+```
+
+But now it won't connect them with a line. Oh well. At least they are in the right order. 
+
