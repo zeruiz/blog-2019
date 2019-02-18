@@ -20,4 +20,6 @@ Instead of deleting the forked repo and forking the other repo again, follow the
 2. [Split-apply-combine...](https://github.com/stat585-at-ISU/blog-2019/blob/master/02/LastnameFirstname.Rmd) - Due Jan 30
 3. [Ethics and Reproducibility...](https://github.com/stat585-at-ISU/blog-2019/blob/master/03/LastnameFirstname.Rmd) - Due Feb 6
 4. [Interesting times...](https://github.com/stat585-at-ISU/blog-2019/blob/master/04/LastnameFirstname.Rmd) - Due Feb 13
+5. [More on Reproducibility...](https://github.com/stat585-at-ISU/blog-2019/blob/master/05/LastnameFirstname.Rmd)
+6. [Using GitHub as a web host](https://github.com/stat585-at-ISU/blog-2019/blob/master/05/LastnameFirstname.Rmd)
 

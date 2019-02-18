@@ -78,3 +78,4 @@ kable(AQ2 %>%
   summarize_all(mean, na.rm = TRUE) %>%
   select(-sample_date))
 
+```
