@@ -9,6 +9,13 @@ root: ../../../
 1. **Answer each of the following questions with at least 2-3 sentences.**
 
     1. **Summarize Roger Peng's outline for reproducibility in** *Biostatistics*. 
+    Reproducibility in simple words means being able to validate someone else analysis. Peng's proposed reproducibility    by       
+    having the following: 
+    
+    Data: the data used in the analysis. 
+    Code: computer code and sowftare used to obtain the results.
+    Reproducibility: an article designed to walk you through step by step how to obtain the results from the analysis.
+
     2. **What are Keiding's main criticisms of the proposal?**. 
     3. **Which point in the commentaries speaks to you the most? Why?**
     4. **How does Keiding respond to the commentary you picked. What are his main points in his response?**
