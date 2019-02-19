@@ -1,0 +1,17 @@
+---
+title: "More on Reproducibility..."
+author: "Oscar Aguilar"
+topic: "05"
+layout: post
+root: ../../../
+---
+
+1. **Answer each of the following questions with at least 2-3 sentences.**
+
+    1. **Summarize Roger Peng's outline for reproducibility in** *Biostatistics*. 
+    2. **What are Keiding's main criticisms of the proposal?**. 
+    3. **Which point in the commentaries speaks to you the most? Why?**
+    4. **How does Keiding respond to the commentary you picked. What are his main points in his response?**
+    
+2. **Describe your experience with a data intensive (collaborative) project. What are the most prominent issues with ensuring reproducibility of research results (focus on data related aspects)? What would you do differently if you could go back in time?**
+
