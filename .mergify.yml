@@ -9,18 +9,43 @@ pull_request_rules:
         message: You cannot modify the LastnameFirstname.Rmd file. Try again, but only modify the file with your name this time.
   - name: Reject merge of new blog post
     conditions:
-      - files~=(.gitignore)|(.Rproj)|(.Rprofile)
+      - files~=.gitignore
     actions:
       label:
         add: ['illegal-files']
       comment:
-        message: Do not push gitignore or Rproject or Rprofile files. 
+        message: Do not push gitignore files. 
+  - name: Reject merge of new blog post
+    conditions:
+      - files~=.Rproj
+    actions:
+      label:
+        add: ['illegal-files']
+      comment:
+        message: Do not push Rproject files.
+  - name: Reject merge of new blog post
+    conditions:
+      - files~=.Rprofile
+    actions:
+      label:
+        add: ['illegal-files']
+      comment:
+        message: Do not push Rprofile files. 
   - name: automatic merge of new blog post
     conditions:
-      - files~=[\d{2}]/[A-Z][a-z]{1,}[A-z][a-z]{1,}\.(Rmd|md|rmd)
+      - files~=[\d{2}]/(Mc)?[A-Z][a-z]{1,}[A-Z][a-z]{1,}\.(Rmd|rmd)
       - label!=modifies-template
       - label!=illegal-files
     actions:
       merge:
         method: merge
-        strict: true
+  - name: automatic merge of new blog post (with number warning)
+    conditions:
+      - files~=[\d{2}]/(Mc)?[A-Z][a-z]{1,}[A-Z][a-z]{1,}[\d{0,}]\.(Rmd|rmd)
+      - label!=modifies-template
+      - label!=illegal-files
+    actions:
+      comment:
+        message: There should not be any numbers in your blog file name. Please adhere to the LastnameFirstname.Rmd scheme.
+      merge:
+        method: merge
