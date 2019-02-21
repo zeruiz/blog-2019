@@ -1,6 +1,6 @@
 ---
 title: "Interesting times..."
-author: "Jessica Kueon
+author: "Jessica Kueon"
 topic: "04"
 layout: post
 root: ../../../
