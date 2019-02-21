@@ -31,15 +31,17 @@ root: ../../../
         although be able to vaeify the numbers and code results is part of reproducibility.
         
     4. **How does Keiding respond to the commentary you picked. What are his main points in his response?**
+    
      Kieding confirms his commentry and give some examples in research in the field of statistic  and biostatistical journals that 
      researchers do not know the substantive context and the domain very well and he bring this issue that how they can reach to a
      result without knowing the underlying knowledge.
+     
     
 2. **Describe your experience with a data intensive (collaborative) project. What are the most prominent issues with ensuring reproducibility of research results (focus on data related aspects)? What would you do differently if you could go back in time?**
 
-In my recent project I had to work with different safety critical systems having dataset in same shape and columns
-with totally different context and domain knowledge. My python code was same across the whole projects but inferring the 
-result was different across the case studies. Even I published my code , I had to explain the result step by step in every
-case study.
-If I could go back in time, I would publish a very good document explaining the whole data and resulty step by step. 
-I would probably choose jupyter notebook or R markdown for this purpose.
+    In my recent project I had to work with different safety critical systems having dataset in same shape and columns
+    with totally different context and domain knowledge. My python code was same across the whole projects but inferring the 
+    result was different across the case studies. Even I published my code , I had to explain the result step by step in every
+    case study.
+    If I could go back in time, I would publish a very good document explaining the whole data and resulty step by step. 
+    I would probably choose jupyter notebook or R markdown for this purpose.
