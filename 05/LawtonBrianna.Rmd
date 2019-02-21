@@ -27,10 +27,19 @@ Keiding's main criticisms of Peng's proposal are:
 --This contradicts the idea of it being reproducible.
 2. There is usually much more to “research” than the statistical analysis, and there is much more to the statistical analysis than the correctness of calculations. A reasonable choice of statistical model (here “correct” is not a meaningful descriptor) requires deep insight into the substantive context, but it is quite unclear how a satisfactory role for the substantive context is assured in the new system.
 --Keiding thinks just being able to rerun calculations and checking if they're correct isnt't enough, he's insenuatingx that there's alot more background analysis and contextual info to be looked into.
-
+3. Keiding preferes the type of biostatistics that he views 
+my view real progress is more often made when the research is inductive or “problem-driven.” That is, a collaboration between substantive scientists and statisticians has identified a substantive problem that requires new statistical methodology for its satisfactory solution
+4.another objection: the actual mechanical SAS- (or R-) number crunching of the finally developed master data set is a minor part of the totality of the statistical analysis, and it ridicules our profession to believe that there is a serious check on reproducibility in seeing if somebody else's computer reaches the same conclusion using the same code on the same data set as the original statistician's computer did.
+5.statisticians may sometimes believe is an objective unfallible basic set of data is in fact a result of countless concrete judgments made in the course of the study primarily by the substantive scientists but usually with insightful input from the study statisticians. This is where an important part of the statistician's responsibility lies, but it is impractical to devise a reanalysis template that can capture this whole process. To draw substantive conclusions from a reanalysis without awareness of the prehistory is unprofessional and trivializes biostatistics.
+--he thinks it is impratical to create a reanalyis/reproducibility template to draw conclusions for whole process that encompasses many statisticians inputing their concrete and insightful judgement.
+6.substantive context has almost been ignored. Peng's implicit assumption is that there exists some immutable data set, directly understandable to any statistician, whose judgments about the relevant substantive context are apparently believed to be directly relevant and credible. The only vague hint to the possibility that the data may require insight is the possibility in Peng's item 3 to submit “External data or auxiliary files containing … other required information” as if such information would only rarely be needed. 
+--Keiding criticizes how Peng deminishes the idea that background context about the data is minor and that all statisticians across the board will understand the data and move forward to try to reproduce it. Keiding scolds the Peng's assumption that only if needed, statistician will need additional data and information from time to time to figure it out--Keiding insenauating that once should always include such files and data.
+-------------Kieding states that if reanlysis is to occur then it has to involve more than just checking calculatins but to involve interdisciplinary researchers who can understand; their must be given context and strengths and weaknesses about the data.
+--------------Keiding also states that if original substantive collaborators make themselves available as partners in reanalyses, and some might put this as a condition for releasing the data. but he thinks this is least likely to happen. 
 
     3. **Which point in the commentaries speaks to you the most? Why?**
 The point about xxx speaks to me the most because 
+
     4. **How does Keiding respond to the commentary you picked. What are his main points in his response?**
 Keiding responds to xxx by saying "xxx"
 His main points are that xxx
