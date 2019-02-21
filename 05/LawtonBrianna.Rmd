@@ -1,0 +1,41 @@
+---
+title: "Blog # 5: More on Reproducibility..."
+author: "Brianna Lawton"
+topic: "05"
+layout: post
+root: ../../../
+---
+
+## Blog Response
+
+1. **Answer each of the following questions with at least 2-3 sentences.**
+
+    1. **Summarize Roger Peng's outline for reproducibility in** *Biostatistics*. 
+In Roger Peng's editorial, he describes how many people are jumping on the bandwagon of reproducible research but he begins to explain how many scientific investogations within fields of study can't be fully replicated because of a lack of time or resources. He goes on to list reasons why there is a need to publish reproducible research, some being: reports of fraudulent research being published, analyses can become complicated and the possibility of unintentional errors resulting in misleading findings, and misunderstandings about commonly used software that is used in a way not intended or defined. 
+
+While there seems to be many benefits of research reproducibility, Peng discussed some disadvantages being: general lack of infrastructure to house this open data, several barriers that investgators encounter with the ability to distribute and make available their materials to reproduce the research for an indefinite amount of time, and lack of an “instruction manual” that indicates which materials are needed and what might be the most suitable formats for making data and computer code available.
+
+Therefore, Peng  proposed a minimum standard that can fill the void between full replication and nothing.His idea of "reproducible research" consisted of 3 parts:
+1. Data:analytic data used to draw conclusions are made available on the journal's website
+2. Code:all code used to produce published results is provided
+3. Reproducibility:the AER* must succeed in executing the code on the data provided and produces results matching those that the authors claim are reproducible.
+The Associate Editor for Reproducibility (AER) will handle submissions of reproducible articles. The AER was usually only involved with a submission only when an article had been accepted for publication but Peng suggested that the AER will consider three different criteria (as listed above) when evaluating the reproducibility of an article.
+
+    2. **What are Keiding's main criticisms of the proposal?**.
+Keiding's main criticisms of Peng's proposal are:
+1. Peng's editorial actively encourages others to conduct “alternative analyses.” This could sometimes be constructive if the purpose was to develop new methodology, but then the term “reproducible” is a misnomer.
+--This contradicts the idea of it being reproducible.
+2. There is usually much more to “research” than the statistical analysis, and there is much more to the statistical analysis than the correctness of calculations. A reasonable choice of statistical model (here “correct” is not a meaningful descriptor) requires deep insight into the substantive context, but it is quite unclear how a satisfactory role for the substantive context is assured in the new system.
+--Keiding thinks just being able to rerun calculations and checking if they're correct isnt't enough, he's insenuatingx that there's alot more background analysis and contextual info to be looked into.
+
+
+    3. **Which point in the commentaries speaks to you the most? Why?**
+The point about xxx speaks to me the most because 
+    4. **How does Keiding respond to the commentary you picked. What are his main points in his response?**
+Keiding responds to xxx by saying "xxx"
+His main points are that xxx
+    
+2. **Describe your experience with a data intensive (collaborative) project. What are the most prominent issues with ensuring reproducibility of research results (focus on data related aspects)? What would you do differently if you could go back in time?**
+
+I would say a prominent issue with ensuring reproducibility of research results is if working in a research group (majority of the time) to make sure that everyone is following the same protocols for cleaning the data, coding the data, interpreting variables and results, consistent offset or margin of error factors, etc. This can cause human error and unintended manipulation in the data and results; then slowing down progress or having to start the project over again. 
+
