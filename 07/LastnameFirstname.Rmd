@@ -8,7 +8,7 @@ root: ../../../
 
 ## Background:
 
-The `DESCRIPTION` file of a package contains the package's meta information. Most of the fields in this file are quite straight forward - such as author, version number, and a short package description. When you call `library(help="<package name>")` for  package `<package name>` you can see the contents of the `DESCRIPTION` file for that package (and some parts of the `NAMESPACE` file).
+The `DESCRIPTION` file of a package contains the package's meta information. Most of the fields in this file are quite straight forward: author, version number, and a short package description. When you call `library(help="<package name>")` for  package `<package name>` you can see the contents of the `DESCRIPTION` file for that package (and some parts of the `NAMESPACE` file).
 
 Read through the chapter on [metadata](http://r-pkgs.had.co.nz/description.html) from Wickham's book on R packages. 
 
@@ -33,7 +33,7 @@ Write a blog post addressing the following questions:
 
 Update your forked version of the 'blog-2019' repository (or re-fork it after deleting your previous repo).
 
-Save a **copy** of this file, replacing "Lastname" and "Firstname" with your own and *leave the original unedited*.
+Save a **copy** of this file, replacing "Lastname" and "Firstname" with your own and *leave the original unedited*. (Note: Lastname = your family name, Firstname = your given name)
 
 In **your copy**, replace the `title:` and `author:` fields in the YAML above, while leaving the remaining fields intact. Remove the background and the instructions sections and write your blog post! 
 
