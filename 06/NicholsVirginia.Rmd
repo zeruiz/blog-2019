@@ -1,0 +1,15 @@
+---
+title: "Using GitHub as a Website Host"
+author: "Virginia Nichols"
+topic: "06"
+layout: post
+root: ../../../
+---
+
+## Reflection
+
+I used Rmarkdown website because I'm new at this, and no need to be a masochist. 
+
+I had a fun time making my website. It could be a time suck, because it is more fun than editing draft 13 of my roots paper. Self discipline is always tested in this world of R....
+
+
