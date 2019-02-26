@@ -6,3 +6,12 @@ layout: post
 root: ../../../
 ---
 
+## Instructions:
+
+Create a file `LastnameFirstname.Rmd` in the 06 folder of the blog-2019 repository. In that file, add a link to your site (found at https://<your-username>.github.io). Write at least 2-3 sentences describing the problems you encountered while following these instructions, how you solved them, and how you anticipate using this site in the future. 
+
+### Site Link: 
+https://oscarm524.github.io
+
+### Issues:
+
