@@ -8,7 +8,7 @@ root: ../../../
 
 ## The website
 
-https://vanichols.github.io/index.html
+https://vanichols.github.io/
 
 ## Reflection/Challenges
 
