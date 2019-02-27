@@ -24,7 +24,7 @@ For larger-scale and more sophisticated websites (such as blogs), you may want t
 
 2. Set up your website using either the Simple Markdown Site or Blogdown instructions below. If you would like to use this repository to host a blog, you may find Blogdown to be a more convenient option, however, it is more complicated than the simple Rmarkdown site. 
 
-3. Create a file `LastnameFirstname.Rmd` in the 06 folder of the blog-2019 repository. In that file, add a link to your site (found at https://<your-username>.github.io). Write at least 2-3 sentences describing the problems you encountered while following these instructions, how you solved them, and how you anticipate using this site in the future. 
+3. Create a file <LastnameFirstname>`.Rmd` in the 06 folder of the blog-2019 repository. In that file, add a link to your site (found at https://<your-username>.github.io). Write at least 2-3 sentences describing the problems you encountered while following these instructions, how you solved them, and how you anticipate using this site in the future. 
 
 To get full marks for this blog post, you should modify your site beyond the default template files, adding at least some content that is unique to you - packages you find interesting, sites you enjoy, projects you have worked on, a page with your CV, etc.
 
