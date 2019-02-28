@@ -6,7 +6,7 @@ layout: post
 root: ../../../
 ---
 
-## First RMarkdown Website, YAH!
+## First RMarkdown Website, YAH!!!
 
 Welcome to my first Simple RMarkdown Website. I would consider myself a novice R language level coder but I learn new things each day to build on my current knowledge which keeps things interesting!
 
