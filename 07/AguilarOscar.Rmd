@@ -31,6 +31,10 @@ Write a blog post addressing the following questions:
   
 2. **Answer the three questions listed above for the licenses: MIT, GPL-3,  LGPL-3, and CC-0. Note that some of the questions might not be answered with a simple yes/no. In that case, go into more detail, but do not just copy the terms of the license.**
 
+  **MIT**
+  This license is a simple and permissive. It allows others to use and freely distribute your code subject to only one 
+  restriction: the license must always be distributed with the code.
+
 3. **Assume that you are in the process of making a package for your own graduate work. Describe considerations that come into play in deciding on a license. In case you are not quite at that stage in your graduate studies yet, come up with a likely scenario. Describe it and discuss.**
 
 ## Instructions:
