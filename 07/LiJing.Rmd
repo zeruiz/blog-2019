@@ -26,17 +26,19 @@ Three of the main questions to answer are:
 Write a blog post addressing the following questions: 
 
 1. **Under what license does R operate?**
-
+ 
+ GPL-2 or GPL-3
 
 2. **Answer the three questions listed above for the licenses: MIT, GPL-3,  LGPL-3, and CC-0. Note that some of the questions might not be answered with a simple yes/no. In that case, go into more detail, but do not just copy the terms of the license.**
+
+MIT: MIT is a shory, permissive license. User can do whatever they want as long as they include the original copyright and license notice in the software. So we are fine with other people modifying our work and sharing their work. We are also fine if others making a profit from the derications. But no one responsible if the software has any bugs.
+
+GPL-3: User could cop, distribute, and modify the software as long as they have description of the modification. So we are fine with others modifying our work, sharing their modificated work, and using for commercial. But no one responsible for it.
+
+LGPL-3: User may copy, distribute and modify the software provided that modifications are described and licensed for free under LGPL. The modified works can only be redistributed under LGPL. So we are fine with others modifying our work, sharing their modificated work, and using for commercial. No one must to be responsible to it.
+
+CC-0: The software or pacakges can be used by anyone for any purpose under this license. So we are fine with others modifying our work, sharing their modificated work, and using for commercial. No one must to be responsible to it.
+
 3. **Assume that you are in the process of making a package for your own graduate work. Describe considerations that come into play in deciding on a license. In case you are not quite at that stage in your graduate studies yet, come up with a likely scenario. Describe it and discuss.**
 
-## Instructions:
-
-Update your forked version of the 'blog-2019' repository (or re-fork it after deleting your previous repo).
-
-Save a **copy** of this file, replacing "Lastname" and "Firstname" with your own and *leave the original unedited*. (Note: Lastname = your family name, Firstname = your given name)
-
-In **your copy**, replace the `title:` and `author:` fields in the YAML above, while leaving the remaining fields intact. Remove the background and the instructions sections and write your blog post! 
-
-Once you are done, **create a pull request** to upload your changes to the original repository. Do not commit the compiled HTML file to the repository.
+It depends on what dependency I used. If my package used many function based on one certain license, I will choose that license. If I don't use many fucntions from other package, I will choose LGPL-3 or MIT, which are less restrictive.
