@@ -17,9 +17,14 @@ root: ../../../
 I used stock data related to Apple and Microsoft during 2018.
 
 ```{r, warning = F, message = F}
+## R-packages
+library(lubridate)
+library(tidyverse)
+
+## Here we read the data
 stocks.data <- read.csv('https://raw.githubusercontent.com/oscarm524/DataSets/master/stock_data.csv')
 
-## Here we conver factor into date
+## Here we convert factor into date
 stocks.data <- stocks.data %>% mutate(Date = as.Date(as.character(Date)))
 stocks.data %>% head
 ```
