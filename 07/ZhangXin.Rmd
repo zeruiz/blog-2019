@@ -27,5 +27,11 @@ Three of the main questions to answer are:
 Write a blog post addressing the following questions: 
 
 1. **Under what license does R operate?**
+
+R is distributed under the terms of the GNU GENERAL PUBLIC LICENSE, either Version 2, June 1991 or Version 3, June 2007. A copy of the version 2 license is in file R_HOME/doc/COPYING and can be viewed by RShowDoc("COPYING"). Version 3 of the license can be displayed by RShowDoc("GPL-3"). (https://www.rdocumentation.org/packages/base/versions/3.5.2/topics/license)
+
 2. **Answer the three questions listed above for the licenses: MIT, GPL-3,  LGPL-3, and CC-0. Note that some of the questions might not be answered with a simple yes/no. In that case, go into more detail, but do not just copy the terms of the license.**
+
+
+
 3. **Assume that you are in the process of making a package for your own graduate work. Describe considerations that come into play in deciding on a license. In case you are not quite at that stage in your graduate studies yet, come up with a likely scenario. Describe it and discuss.**
