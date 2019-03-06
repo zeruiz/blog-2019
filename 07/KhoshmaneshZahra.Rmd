@@ -15,18 +15,65 @@ root: ../../../
 
       + GNU GPL v2
        
-      + Definition og GNU v2 from [Wikipedia](https://en.wikipedia.org/wiki/GNU_General_Public_License#Version_2):
+      + Definition of GNU v2 from [Wikipedia](https://en.wikipedia.org/wiki/GNU_General_Public_License#Version_2):
        
       + "The GNU General Public License (GNU GPL or GPL) is a widely used free software license, which guarantees end users the freedom 
         to run, study, share and modify the software." 
 
 2. **Answer the three questions listed above for the licenses: MIT, GPL-3,  LGPL-3, and CC-0. Note that some of the questions might not be answered with a simple yes/no. In that case, go into more detail, but do not just copy the terms of the license.**
+
+      + MIT
    
-    1. Are you and your collaborators fine with other people modifying your work and then sharing the modified work?
+             1. Are you and your collaborators fine with other people modifying your work and then sharing the modified work?
+             
+             yes. in MIT license the only restriction is distributing the licence with code with any modification.
 
-    2. Are you and your collaborators fine with other people making a profit from those derivations?
+             2. Are you and your collaborators fine with other people making a profit from those derivations?
+             
+             yes. Since in MIT licence there is not any restriction for making profit from software presented under MIT license.
 
-    3. Who is responsible if your software does not do what it promises to do?
+             3. Who is responsible if your software does not do what it promises to do?
+             
+             No one is responsible for any failure.
+
+      + GPL-3
+   
+             1. Are you and your collaborators fine with other people modifying your work and then sharing the modified work?
+
+             2. Are you and your collaborators fine with other people making a profit from those derivations?
+
+             3. Who is responsible if your software does not do what it promises to do?
+             
+      + LGPL-3
+   
+             1. Are you and your collaborators fine with other people modifying your work and then sharing the modified work?
+             
+            
+
+             2. Are you and your collaborators fine with other people making a profit from those derivations?
+             
+            
+
+             3. Who is responsible if your software does not do what it promises to do?
+             
+      + CC-0
+   
+             1. Are you and your collaborators fine with other people modifying your work and then sharing the modified work?
+
+             2. Are you and your collaborators fine with other people making a profit from those derivations?
+
+             3. Who is responsible if your software does not do what it promises to do?           
+    
 
 3. **Assume that you are in the process of making a package for your own graduate work. Describe considerations that come into play in deciding on a license. In case you are not quite at that stage in your graduate studies yet, come up with a likely scenario. Describe it and discuss.**
+
+I would consider the following criteria for the licence that I will choose for my package:
+
+* Allow others to share, distribute and modify freely for educational purposes.
+
+* keep right for myself for commercial purposes.
+
+* allow people to modify it but not in a way to harm others.
+
+* I am not responsible for any failure or not working the product that promise to be.
 
