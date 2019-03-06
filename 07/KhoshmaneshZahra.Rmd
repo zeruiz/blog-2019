@@ -13,11 +13,11 @@ root: ../../../
 
 1. **Under what license does R operate?**
 
-    	 GNU GPL v2
+      + GNU GPL v2
        
-       Definition from (Wikipedia)[https://en.wikipedia.org/wiki/GNU_General_Public_License#Version_2] :
+      + Definition og GNU v2 from [Wikipedia](https://en.wikipedia.org/wiki/GNU_General_Public_License#Version_2):
        
-       "The GNU General Public License (GNU GPL or GPL) is a widely used free software license, which guarantees end users the freedom 
+      + "The GNU General Public License (GNU GPL or GPL) is a widely used free software license, which guarantees end users the freedom 
         to run, study, share and modify the software." 
 
 2. **Answer the three questions listed above for the licenses: MIT, GPL-3,  LGPL-3, and CC-0. Note that some of the questions might not be answered with a simple yes/no. In that case, go into more detail, but do not just copy the terms of the license.**
