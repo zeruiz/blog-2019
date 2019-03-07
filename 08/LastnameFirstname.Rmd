@@ -1,0 +1,32 @@
+---
+title: "It's magick!"
+author: "Firstname Lastname"
+topic: "08"
+layout: post
+root: ../../../
+---
+
+## Background:
+
+Image files come in all kinds of formats. There's png, tiff, svg, pdf, just to name a few. What's the difference, and how can we work with them?
+
+Reading: 
+
+  - Identify online sources to read up on differences between image file formats. 
+
+  - The `magick` package allows us to work with raster images in R. Read through the  [magick vignette](https://cran.r-project.org/web/packages/magick/vignettes/intro.html) to learn about the package's functionality.
+
+Write a blog post answering the following questions and detailing the progress: 
+
+1. **Describe the difference between formats png, svg, and pdf. State your sources with (working!) links (take a look at the RMarkdown cheatsheet for RStudio to learn how to make working links). Make one plot in ggplot2 and save it (using R code) in each of the three file formats you discussed. Comment on the differences you observe in their usage.**
+2. **Use `magick` functionality to create an image to be used for a hex sticker.**  package `hexSticker` can help you to get started on dimensions of the sticker. **Include all code necessary to produce your sticker.** In case you are using local images, post those in a folder on **your** website and use the URL to link to them.
+
+## Instructions:
+
+Update your forked version of the 'blog-2019' repository (or re-fork it after deleting your previous repo).
+
+Save a **copy** of this file, replacing "Lastname" and "Firstname" with your own and *leave the original unedited*. (Note: Lastname = your family name, Firstname = your given name)
+
+In **your copy**, replace the `title:` and `author:` fields in the YAML above, while leaving the remaining fields intact. Remove the background and the instructions sections and write your blog post! 
+
+Once you are done, **create a pull request** to upload your changes to the original repository. Do not commit the compiled HTML file to the repository.
