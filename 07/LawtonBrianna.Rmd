@@ -1,0 +1,65 @@
+---
+title: "Blog #7: All that legal stuff..."
+author: "Brianna Lawton"
+topic: "07"
+layout: post
+root: ../../../
+---
+
+## Blog 7 Responses
+
+1. **Under what license does R operate?**
+
+R operates under the GPL-2/GPL-3.
+
+2. **Answer the three questions listed above for the licenses: MIT, GPL-3,  LGPL-3, and CC-0. Note that some of the questions might not be answered with a simple yes/no. In that case, go into more detail, but do not just copy the terms of the license.**
+
+# MIT License
+# 1. Are you and your collaborators fine with other people modifying your work and then sharing the modified work?
+# Yes, can make changes to the work; can distribute the compiled code and/or source.
+
+# 2. Are you and your collaborators fine with other people making a profit from those derivations?
+# Yes, can sell copies of the software; use the work commercially
+
+# 3. Who is responsible if your software does not do what it promises to do?
+# Nobody is responsible; author is not liable; work provided is "as is"
+
+# GPL-3  means GNU General Public License version 3
+# 1. Are you and your collaborators fine with other people modifying your work and then sharing the modified work?
+# Yes
+
+# 2. Are you and your collaborators fine with other people making a profit from those derivations?
+# Yes
+
+# 3. Who is responsible if your software does not do what it promises to do?
+# Is described or included in the warranty section of the software if the software/license owner can be charged for damages or held liable. 
+
+# LGPL-3 
+# 1. Are you and your collaborators fine with other people modifying your work and then sharing the modified work?
+# X
+
+# 2. Are you and your collaborators fine with other people making a profit from those derivations?
+# X
+
+# 3. Who is responsible if your software does not do what it promises to do?
+#  X
+
+# CC-0
+# 1. Are you and your collaborators fine with other people modifying your work and then sharing the modified work?
+# Yes,
+
+# 2. Are you and your collaborators fine with other people making a profit from those derivations?
+# Yes,
+
+# 3. Who is responsible if your software does not do what it promises to do?
+#  Not the creator,  
+  
+
+3. **Assume that you are in the process of making a package for your own graduate work. Describe considerations that come into play in deciding on a license. In case you are not quite at that stage in your graduate studies yet, come up with a likely scenario. Describe it and discuss.**
+
+Scenario:
+If I am creating a package that is able to input data 
+1. I would want to make it open for people to use freely, so copy and distribute, but not modify
+1a. If an individual wants to modify they have to give credit to me/include my source code and ....
+2. I would not all people to sell/make profit on my software unless they give me a percentage...
+3. Any modifications need to notify me the creator
