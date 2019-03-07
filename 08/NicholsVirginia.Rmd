@@ -1,0 +1,64 @@
+---
+title: "It's magick!"
+author: "Virginia Nichols"
+topic: "08"
+layout: post
+root: ../../../
+---
+
+## Background:
+
+Image files come in all kinds of formats. There's png, tiff, svg, pdf, just to name a few. What's the difference, and how can we work with them?
+
+Reading: 
+
+  - Identify online sources to read up on differences between image file formats. 
+
+  - The `magick` package allows us to work with raster images in R. Read through the  [magick vignette](https://cran.r-project.org/web/packages/magick/vignettes/intro.html) to learn about the package's functionality.
+
+Write a blog post answering the following questions and detailing the progress: 
+
+1. **Describe the difference between formats png, svg, and pdf. State your sources with (working!) links (take a look at the RMarkdown cheatsheet for RStudio to learn how to make working links). Make one plot in ggplot2 and save it (using R code) in each of the three file formats you discussed. Comment on the differences you observe in their usage.**
+
+I had a hard time finding a site that covered these 3 files types, so I cobbled together a comparison via a conglomeration of ![this](https://blog.mrdaniels.ch/warz/png-vs-svg-2017/) and ![that](https://blog.hubspot.com/insiders/different-types-of-image-files). 
+
+The differences seem to depend on your goal in life. If you are photographer, versus a graphic designer, versus a web-developer...your opinion is shaped by your background. 
+
+A helpful 'high-level' distinction is raster (jpeg, gif, png) versus vector (pdf). Don't resize rasters - make them the size you will ultimately use. png = good for web. svg = outdated.  
+png and svg both offer transparent backgrounds, pdf does not. png is better than svg. 
+
+I made a figure in all three (png, pdf, svg) formats. 
+```{r, echo = F}
+library(tidyverse)
+library(svglite)
+
+mtcars %>%
+  ggplot(aes(wt, mpg)) + 
+  geom_point(aes(size = hp, fill = hp), pch = 21)
+
+#ggsave("myfig.png")
+#ggsave("myfig.pdf")
+#ggsave("myfig.svg")
+
+#ggsave("myfig2.png", height = 3, width = 3)
+#ggsave("myfig2.pdf", height = 3, width = 3)
+
+
+```
+
+svg required the installation of the svglite package AND it took *FOREVER*. Plus, I couldn't view it. 
+
+I tried each png and pdf at 7x7" and 3x3" to see if the size made a difference. It didn't. I think the pdf looked a little sharper. 
+
+
+2. **Use `magick` functionality to create an image to be used for a hex sticker.**  package `hexSticker` can help you to get started on dimensions of the sticker. **Include all code necessary to produce your sticker.** In case you are using local images, post those in a folder on **your** website and use the URL to link to them.
+
+## Instructions:
+
+Update your forked version of the 'blog-2019' repository (or re-fork it after deleting your previous repo).
+
+Save a **copy** of this file, replacing "Lastname" and "Firstname" with your own and *leave the original unedited*. (Note: Lastname = your family name, Firstname = your given name)
+
+In **your copy**, replace the `title:` and `author:` fields in the YAML above, while leaving the remaining fields intact. Remove the background and the instructions sections and write your blog post! 
+
+Once you are done, **create a pull request** to upload your changes to the original repository. Do not commit the compiled HTML file to the repository.
