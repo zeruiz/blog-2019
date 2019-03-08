@@ -6,28 +6,20 @@ layout: post
 root: ../../../
 ---
 
-**Note:** This blog post generates a number of files and saves them to a folder within the current working directory. The following parameters may be altered to correspond to whether those images should be kept or deleted after knitting this document.
+**Note:** This blog requires the generation of a number of files. Knitting this document will create a directory called "MirandaTilton_blog8" in the current working directory, and all saved files will be stored there.
 
 ```{r}
 mt_dir <- file.path(getwd(), "MirandaTilton_blog8")
 if(!dir.exists(mt_dir)) {dir.create(mt_dir)}
-
-keep_part1 <- T
-keep_sticker_components <- T
-keep_stickers <- T
-
-# If any of the above are true, keep the directory that holds them
-# If all are false, delete the new directory (and all contents)
-keep_dir <- as.logical(keep_part1 + keep_sticker_components + keep_stickers)
 ```
 
+# 1)
 
-
-1. **Describe the difference between formats png, svg, and pdf. State your sources with (working!) links (take a look at the RMarkdown cheatsheet for RStudio to learn how to make working links). Make one plot in ggplot2 and save it (using R code) in each of the three file formats you discussed. Comment on the differences you observe in their usage.**
+**Describe the difference between formats png, svg, and pdf. State your sources with (working!) links (take a look at the RMarkdown cheatsheet for RStudio to learn how to make working links). Make one plot in ggplot2 and save it (using R code) in each of the three file formats you discussed. Comment on the differences you observe in their usage.**
 
 First, it is useful to understand the difference between raster and vector graphics. As described [at this link](https://www.logaster.com/blog/vector-and-raster-graphics/), raster graphics consist of small pieces, like a mosaic. Because the graphics are described pixel-by-pixel, it is easier to use smooth transitions of colors and shades; however, they take up more space to store and lose quality when increasing their size. Vector graphics, on the other hand, are described by continuous lines and curves associated with colors. Vector graphics take up less space and scale nicely, which makes it a better choice for, say, company logos that may need to appear on a business card or a billboard, but they do not allow smooth color transitions.
 
-Of the three formats, PNG is a raster image format while SVG and PDF are vector formats. According to [this source](https://www.logaster.com/blog/jpg-png-svg-pdf-formats/), PNG is compressed without quality loss (as opposed to JPEG, which compresses with loss of quality) and is used for storing graphics with logos and sharp edges. PDFs may contain both raster and vector graphics elements within them. SVG, or "scalable vector graphics" is purely a vector graphics format which allows size increases without loss of quality.
+Of the three formats, PNG is a raster image format while SVG and PDF are vector formats. According to [this source](https://www.logaster.com/blog/jpg-png-svg-pdf-formats/), PNG is compressed without quality loss (as opposed to JPEG, which compresses with loss of quality) and is used for storing graphics with logos and sharp edges. PDFs may contain both raster and vector graphics elements within them. SVG (which aptly stands for "scalable vector graphics") is purely a vector graphics format which allows size increases without loss of quality.
 
 ```{r, fig.width = 5, fig.height = 4}
 library(ggplot2)
@@ -46,7 +38,9 @@ d <- ggplot(dino) +
 d
 ```
 
-```{r}
+The traditional way to save a plot is to start a device of the desired format, then call the plot and shut off the device.
+
+```{r, message = F}
 # PNG
 png(filename = file.path(mt_dir, "dino.png"),
     width = 5, height = 4, units = "in", res = 800)
@@ -68,9 +62,22 @@ d
 dev.off()
 ```
 
-2. **Use `magick` functionality to create an image to be used for a hex sticker.**  package `hexSticker` can help you to get started on dimensions of the sticker. **Include all code necessary to produce your sticker.** In case you are using local images, post those in a folder on **your** website and use the URL to link to them.
+The package ggplot2 also provides the ggsave() function that saves plots in a number of formats.
 
-# First sticker
+```{r, message = F}
+ggsave(plot = d, filename = file.path(mt_dir, "dino.png"), device = "png")
+ggsave(plot = d, filename = file.path(mt_dir, "dino.pdf"), device = "pdf")
+ggsave(plot = d, filename = file.path(mt_dir, "dino.svg"), device = "svg")
+```
+
+It seems that the SVG format is a bit slower than the pdf and png formats, but I don't otherwise notice a huge difference in quality.
+
+
+#2)
+
+**Create a sticker using the "magick" and "hexSticker" packages.**
+
+### First sticker
 
 ```{r, message = F}
 library(hexSticker)
@@ -84,67 +91,38 @@ font <- "Cuprum"
 font_add_google(font)
 #Other font choices: "Amatic SC", "Quicksand", "Pathway Gothic One"
 
-vgg_struct <- image_read("https://github.com/MirandaTilton/shoe_nnet/raw/master/CoNNOR_structure_nolabel_bold.png")
+vgg_struct <- image_read("https://github.com/MirandaTilton/shoe_nnet/raw/master/shoe_images/logo_images/CoNNOR_structure_nolabel_bold.png")
 
 st <- sticker(vgg_struct, package = "CoNNOR",
               filename = file.path(mt_dir, "CoNNOR.png"),
-              p_size = 28, p_y = 1.5, p_color = "gray40",
-              p_family = font,
-              s_x = 1.1, s_y = .85, 
-              s_width = 1.6, s_height = 1.4,
+              p_size = 28, p_y = 1.5, p_color = "gray40", p_family = font,
+              s_x = 1.1, s_y = .85, s_width = 1.6, s_height = 1.4,
               h_fill = "gray95", h_color = "cyan4", h_size = 1.5,
               spotlight = T)
 
 # Display the image by loading the PNG (to fix font scaling issues)
-s <- image_read(file.path(mt_dir, "CoNNOR.png"))
-s
+s <- image_read(file.path(mt_dir, "CoNNOR.png")); s
 ```
 
-# Second sticker
+### Second sticker
 
-
-[Neuron source](https://pixabay.com/p-2660914/?no_redirect)
-
-```{r, include = F}
-# Make neural shoe, 200X112
-
-shoe <- image_read(file.path(mt_dir, "shoeprint.png")); shoe
-shoe_outline <-  shoe %>%
-  image_canny(geometry = ".5x2+5%+30%") %>%
-  image_negate %>%
-  image_rotate(-90) %>%
-  image_fill(color = "blue", point = "+100+100") %>%
-  image_fill(color = "blue", point = "+150+100") %>%
-  image_transparent("blue") %>%
-  image_crop(geometry = "200X112+0+44"); shoe_outline
-
-neuron <- image_read(file.path(mt_dir, "neuron.jpg"))
-bg <- neuron %>%
-  image_crop("200X112+100+55"); bg
-
-nn_shoe <- image_flatten(c(bg, shoe_outline)) %>%
-  image_rotate(0) %>%
-  image_transparent("white") %>%
-  image_enhance(); nn_shoe
-```
-
-
+The shoe outline image was found [here](http://www.clker.com/cliparts/i/A/h/U/6/P/shoe-print.svg) and is also hosted [here](https://github.com/MirandaTilton/shoe_nnet/blob/master/shoe_images/logo_images/shoe-print.svg). The neuron background image was found [here](https://pixabay.com/p-2660914/?no_redirect) and is also hosted [here](https://github.com/MirandaTilton/shoe_nnet/blob/master/shoe_images/logo_images/neuron.jpg).
 
 ```{r}
-#WIP######################
+# Function takes magick image and returns string of its dimensions
 get_dim <- function(magick_img) {
   stopifnot(class(magick_img) == "magick-image")
   info <- image_info(magick_img)
   return(paste0(info$width, "x", info$height))
 }
 
-# Turn original SVG into image with white background
-tmp <- image_read_svg("http://www.clker.com/cliparts/i/A/h/U/6/P/shoe-print.svg") 
+# Turn original SVG into png with white background
+tmp <- image_read_svg("http://www.clker.com/cliparts/i/A/h/U/6/P/shoe-print.svg")
 w <- image_info(tmp)$width
 h <- image_info(tmp)$height
 shoe <- image_flatten(c(tmp, image_blank(width = w, height = h))); shoe
 
-# Create mask to go over background image (don't scale yet)
+# Create mask to go over background image
 shoe_outline <- shoe %>%
   image_canny() %>%
   image_negate() %>%
@@ -153,49 +131,18 @@ shoe_outline <- shoe %>%
   image_transparent("blue") %>%
   image_scale("600x"); shoe_outline
 
-neuron <- image_read(file.path(mt_dir, "neuron.jpg")); neuron
+# Read in background image
+neuron <- image_read("https://github.com/MirandaTilton/shoe_nnet/raw/master/shoe_images/logo_images/neuron.jpg"); neuron
+
+# Crop background image to size of mask
 bg <- neuron %>%
-  image_crop(get_dim(shoe_outline)); bg
+  image_crop(paste0(get_dim(shoe_outline),"+100+55")); bg
 
-mask <- shoe_outline %>%
-  image_scale(get_dim(bg)); mask
-bg <- neuron %>%
-  image_crop(get_dim(mask)); bg
-
-nn_shoe <- image_flatten(c(bg, mask)) %>%
-  image_rotate(-11) %>%
-  image_transparent("white"); nn_shoe
-
-```
-
-```{r}
-#Works
-shoe <- image_read(file.path(mt_dir, "shoe-print.png")); shoe
-
-shoe_outline <-  shoe %>%
-  image_canny(geometry = ".5x2+5%+30%") %>% # extract edges of shape
-  image_negate() %>% # make image white with black edges
-  image_scale("600X") %>% # sufficiently big for good resolution
-  image_fill(color = "blue", point = "+100+100") %>% # identify shape chunks
-  image_fill(color = "blue", point = "+480+100") %>%
-  image_transparent("blue") # make shape chunks transparent
-
-print(shoe_outline) # look at outline, save size info for background cropping
-info <- image_info(shoe_outline)
-outline_dim <- paste0(info$width, "x", info$height)
-
-neuron <- image_read(file.path(mt_dir, "neuron.jpg")); neuron
-bg <- neuron %>%
-  image_crop(paste0(outline_dim, "+100+55")); bg
-
+# Lay mask over background, rotate to horizontal, and remove white background
 nn_shoe <- image_flatten(c(bg, shoe_outline)) %>%
   image_rotate(-11) %>%
   image_transparent("white"); nn_shoe
-
-# image_write(nn_shoe, path = file.path(mt_dir, "shoe.jpg"), quality = 100)
 ```
-
-
 
 ```{r}
 st <- sticker(nn_shoe, package = "CoNNOR",
@@ -203,28 +150,11 @@ st <- sticker(nn_shoe, package = "CoNNOR",
               p_size = 30, p_y = 1.4, p_color = "gray40",
               p_family = font,
               s_x = 1, s_y = .8, 
-              s_width = 1.6, s_height = 1.5, dpi = 1000,
+              s_width = 1.6, s_height = 1.5,
               h_fill = "gray95", h_color = "aquamarine4", h_size = 1.8)
 
 # Display the image by loading the PNG (to fix font scaling issues)
-s <- image_read(file.path(mt_dir, "CoNNOR2.png"))
-s
-```
-
-```{r, echo = F}
-if(!keep_dir) {
-  file.remove(mt_dir)
-}
-
-if(!keep_part1) {
-  list.files(mt_dir, pattern = "dino", full.names = T) %>%
-    file.remove()
-}
-
-if(!keep_stickers) {
-  list.files(mt_dir, pattern = "CoNNOR", full.names = T) %>%
-    file.remove()
-}
+s <- image_read(file.path(mt_dir, "CoNNOR2.png")); s
 ```
 
 
