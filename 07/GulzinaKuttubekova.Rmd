@@ -3,7 +3,7 @@ title: "All the legal stuff"
 author: "Gulzina Kuttubekova"
 root: ../../../
 layout: post
-topic: '06'
+topic: '07'
 ---
 
  Here, we want to focus on the use of licenses in R packages. There are several important aspects to consider when choosing a license for your work. Three of the main questions to answer are:
