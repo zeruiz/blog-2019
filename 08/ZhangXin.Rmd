@@ -1,7 +1,7 @@
 
 ---
 title: "It's magick!"
-author: "Firstname Lastname"
+author: "Xin Zhang"
 topic: "08"
 layout: post
 root: ../../../
@@ -27,11 +27,11 @@ I find the material in the following links:
 
 [SVG, PDF, JPG, PNG; WHAT'S THE DIFFERENCE?](https://www.95visual.com/blog/svg-pdf-jpg-png-whats-the-difference)
 
-[PDF](https://en.wikipedia.org/wiki/PDF)
+[PDF: wikipedia](https://en.wikipedia.org/wiki/PDF)
 
-[PNG](https://en.wikipedia.org/wiki/Portable_Network_Graphics)
+[PNG: wikipedia](https://en.wikipedia.org/wiki/Portable_Network_Graphics)
 
-[SVG](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics)
+[SVG: wikipedia](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics)
 
 [SVG vs. PNG, Which is the Best in 2017?](https://blog.mrdaniels.ch/warz/png-vs-svg-2017/)
 
@@ -51,6 +51,36 @@ The rule to choose PNG or SVG or PDF:
 
 3). PNG images are ideal for web graphics, especially logos, illustrations, and graphs. They can shrink to very small file sizes when colors and elements are limited. Also, PNG can be fully transparent, allowing you to place illustrations and designs atop backgrounds effortlessly.
 
+```{r include=F}
+library(dplyr)
+library(magick)
+library(hexSticker)
+library(ggplot2)
+library(ggthemes)
+library(ggcorrplot)
+```
 
+```{r}
+data(mtcars)
+corr <- round(cor(mtcars), 1)
+c <- ggcorrplot(corr, method = "circle")
+ggsave(file='c.svg')
+ggsave(file='c.pdf')
+ggsave(file='c.png')
+Ipng <- image_read("c.png")
+Ipdf <- image_read("c.pdf")
+Isvg <- image_read("c.svg")
+compare <- rbind(image_info(Ipng), image_info(Ipdf), image_info(Isvg))
+compare %>% knitr::kable(caption = "Comparison of SVG, PDF, and PNG")
+```
+
+Compare the three formats. PNG is the largest and SVG is the smallest. The density of SVG is the largest.
 
 2. **Use `magick` functionality to create an image to be used for a hex sticker.**  package `hexSticker` can help you to get started on dimensions of the sticker. **Include all code necessary to produce your sticker.** In case you are using local images, post those in a folder on **your** website and use the URL to link to them.
+
+```{r}
+sticker_c <- sticker(c, package = "AdsFunnel", p_size=18, p_color = "#f39c12",
+             s_x=1, s_y=1, s_width=1.5, s_height = 1.5, 
+             h_fill="#FFFFFF", h_color="#f39c12")
+sticker_c 
+```
