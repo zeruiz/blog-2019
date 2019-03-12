@@ -55,8 +55,10 @@ ggsave("tx.svg")
 ```
 Here are images of my plots - I could not get the pdf to show up in the html but we can compare the png and the svg. I'm assuming these files are saving to the working directory of the person knitting the document. 
 
-![png file](tx.png)
-![svg filetype ](tx.svg)
+```{r}
+knitr::include_graphics("tx.png")
+knitr::include_graphics("tx.svg")
+```
 
 Right now I can't tell the difference between these two. 
 
@@ -67,7 +69,7 @@ library(magick)
 butterfly <- image_read('https://lydiapenglish.github.io/butterfly.png')
 print(butterfly)
 library(hexSticker)
-sticker(butterfly, package = "Vegan", p_color = "darkgreen", h_fill = "white", s_width = 1.2, s_height = 1, s_x = 1, s_y = 0.9, p_x = 1, p_y = 1.65, p_size = 16)
+p <- sticker(butterfly, package = "Vegan", p_color = "darkgreen", h_fill = "white", s_width = 1.2, s_height = 1, s_x = 1, s_y = 0.9, p_x = 1, p_y = 1.65, p_size = 16)
+plot(p)
 ```
 
-![](Vegan.png)
