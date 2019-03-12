@@ -1,6 +1,6 @@
 ---
 title: "(Oh Oh Oh) It's magick!"
-author: "Steve Harms"
+author: "Jing Li"
 topic: "08"
 layout: post
 root: ../../../
