@@ -50,12 +50,14 @@ tx
 # saving to different formats - assuming this saves to the working directory
 # I'm commenting this out so that they don't clog up your file directory
 
+
 # ggsave("tx.pdf")
 # ggsave("tx.png")
 # library(svglite)
 # ggsave("tx.svg")
 
 ```
+
 It appears that the pdf is the smallest file while the png is 10x larger. The svg file is somewhere in the middle. This is good information to know - depending on my purpose it'll change what time of file I send to collegues. 
 
 2. **Use `magick` functionality to create an image to be used for a hex sticker.**  package `hexSticker` can help you to get started on dimensions of the sticker. **Include all code necessary to produce your sticker.** In case you are using local images, post those in a folder on **your** website and use the URL to link to them.
