@@ -87,5 +87,9 @@ hector <- image_read('https://oscarm524.github.io/hector1.jpg') %>% image_crop(g
 hector_sticker <- sticker(hector, package = "Salsa", p_size = 15, p_color = 'black', p_y = 1.6, s_x = 1, s_y = 0.93, s_width = 1.3, s_height = 1.4, h_fill = "white", h_color = "black")
 
 hector_sticker
+
+## Here we include the sticker just in case
+knitr::include_graphics("")
+```
 ```
 
