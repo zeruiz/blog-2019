@@ -37,8 +37,6 @@ I can't tell the quality difference with the naked eyes. But the storage size ca
 library(magick)
 library(hexSticker)
 cat<-image_read("https://ya-webdesign.com/images/pusheen-computer-png.png")
-#pusheen<-sticker(cat, package="Busy", p_size=8, p_color="black", p_x=1, p_y=1.6, s_x=1, s_y=.9, s_width=1.2, s_height=1, h_fill="aquamarine3")
-pusheen<-sticker(cat, package="hexSticker", p_size=8, s_x=1, s_y=.8, s_width=1.2, s_height=1,)
-
+pusheen<-sticker(cat, package="Busy", p_size=8, p_color="black", p_x=1, p_y=1.6, s_x=1, s_y=.9, s_width=1.2, s_height=1, h_fill="aquamarine3")
 pusheen
 ```
