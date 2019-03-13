@@ -89,7 +89,7 @@ hector_sticker <- sticker(hector, package = "Salsa", p_size = 15, p_color = 'bla
 hector_sticker
 
 ## Here we include the sticker just in case
-knitr::include_graphics("")
+knitr::include_graphics('https://oscarm524.github.io/salsa.png')
 ```
 ```
 
