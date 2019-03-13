@@ -75,3 +75,17 @@ ggsave(file =  'plot.svg')
 
 2. **Use `magick` functionality to create an image to be used for a hex sticker.**  package `hexSticker` can help you to get started on dimensions of the sticker. **Include all code necessary to produce your sticker.** In case you are using local images, post those in a folder on **your** website and use the URL to link to them.
 
+I decided to create a sticker with a picture of Hector Lavoe one of the best Puerto Rican salsa singers.
+
+```{r}
+library(magick)
+library(tidyverse)
+library(hexSticker)
+
+hector <- image_read('https://oscarm524.github.io/hector1.jpg') %>% image_crop(geometry_area(480, 410))
+
+hector_sticker <- sticker(hector, package = "Salsa", p_size = 15, p_color = 'black', p_y = 1.6, s_x = 1, s_y = 0.93, s_width = 1.3, s_height = 1.4, h_fill = "white", h_color = "black")
+
+hector_sticker
+```
+
