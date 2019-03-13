@@ -17,6 +17,10 @@ PDF can be both vector image and raster image. PDF files can be password protect
 PNG is used almost exclusively for images used on websites. PNG is raster image compressed without quality loss. It supports  transparency and fading effects, has small storage and can handle full color.
 
 
+Reference: <https://www.95visual.com/blog/svg-pdf-jpg-png-whats-the-difference>
+
+
+
 ```{r, message=FALSE, warning=FALSE}
 
 library(tidyverse)
@@ -49,6 +53,10 @@ The size of svg is vector image. The size of this svg is larger than pdf, that i
 ```
 
 
+
+2. **Use `magick` functionality to create an image to be used for a hex sticker.**  package `hexSticker` can help you to get started on dimensions of the sticker. **Include all code necessary to produce your sticker.** In case you are using local images, post those in a folder on **your** website and use the URL to link to them.
+
+
 ```{r, message=FALSE, warning=FALSE}
 
 Doraemon <- image_read("https://raw.githubusercontent.com/floatgreen/Introduction_to_R/master/Doraemon2.png")
@@ -72,9 +80,8 @@ knitr::include_graphics("https://raw.githubusercontent.com/floatgreen/Introducti
 
 
 
-Reference: <https://www.95visual.com/blog/svg-pdf-jpg-png-whats-the-difference>
 
 
-2. **Use `magick` functionality to create an image to be used for a hex sticker.**  package `hexSticker` can help you to get started on dimensions of the sticker. **Include all code necessary to produce your sticker.** In case you are using local images, post those in a folder on **your** website and use the URL to link to them.
+
 
 
