@@ -91,5 +91,4 @@ hector_sticker
 ## Here we include the sticker just in case
 knitr::include_graphics('https://oscarm524.github.io/salsa.png')
 ```
-```
 
