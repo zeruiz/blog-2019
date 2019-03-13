@@ -51,10 +51,8 @@ library(svglite)
 library(magick)
 library(hexSticker)
 
-peng<- "https://i.imgur.com/uJiJz4u.png"
-
 peng2 <- image_read('https://i.imgur.com/uJiJz4u.png') %>%
-  image_trim %>% image_transparent("lightskyblue")
+  image_trim %>% image_transparent("#F9F9F9")
 
 peng_sticker <- sticker(peng2, package = "penguin", s_x = 1, s_width = 0.8, s_height = 1, p_y = 1.5, p_color = "black", h_fill = "white")
 
