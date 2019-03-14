@@ -1,9 +1,8 @@
 ---
 title: "It's magick!"
-author: "Gano Agadilov"
+author: "Gani Agadilov"
 output:
   pdf_document: default
-  word_document: default
 root: ../../../
 layout: post
 topic: 08
@@ -53,7 +52,7 @@ After saving the files, it can be seen that the PNG format has the largest size 
 2. **Use `magick` functionality to create an image to be used for a hex sticker.**  package `hexSticker` can help you to get started on dimensions of the sticker. **Include all code necessary to produce your sticker.** In case you are using local images, post those in a folder on **your** website and use the URL to link to them.
 
 I desided to make a sticker by using the ISU logo. 
-```{r}
+```{r,warning=FALSE}
 library(hexSticker)
 library(magick)
 
