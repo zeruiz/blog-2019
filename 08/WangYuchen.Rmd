@@ -1,0 +1,73 @@
+---
+title: "It's magick!"
+author: "Firstname Lastname"
+topic: "08"
+layout: post
+root: ../../../
+---
+##Question1
+The png file format is for bitmap image. The png image is with a fixed number of pixels, which means zooming in can lead to unclear image (mosaic) and zooming out can lead to over-edged image.  
+The svg file format is for vector image. The vector image stores the every parts as geometric forms, which means the zooming in or zooming out will not change the quality of the image.  
+The pdf file format is a good way to store high quality image because it is uncompressed. The disadvantage is that pdf file format is larger than png or svg.  
+The reference:   
+[the difference between png and svg](http://asiapacific.anu.edu.au/mapsonline/faq/what-difference-between-png-file-raster-image-and-svg-file-vector-image)  
+[The difference between svg, pdf, jpg, png](https://www.95visual.com/blog/svg-pdf-jpg-png-whats-the-difference)  
+
+```{r message=FALSE, warning=FALSE, paged.print=FALSE}
+library(magick)
+library(hexSticker)
+library(tidyverse)
+```
+
+###Make a plot and save it as different formats
+```{r}
+data("mtcars")
+p <- mtcars %>% ggplot(aes(mpg, wt)) + geom_point()
+print(p)
+```
+
+```{r message=FALSE, warning=FALSE, paged.print=FALSE}
+pdf("p.pdf")
+print(p)
+dev.off()
+png("p.png")
+print(p)
+dev.off()
+svg("p.svg")
+print(p)
+dev.off()
+```
+
+
+###read the image files in.
+```{r}
+p_pdf <- image_read_pdf("p.pdf")
+print(p_pdf)
+p_png <- image_read("p.png")
+print(p_png)
+p_svg <- image_read_svg("p.svg")
+print(p_svg)
+```
+  
+Apparently, the pdf format provides the highest quality image and the size is very large. The png and svg format provide smaller image, however, the svg format image could set into different size without the loss of quality.   
+
+##Question2 Make a hex sticker  
+I used a Pinkiepie image from internet.  
+```{r}
+p <- image_read("https://yt3.ggpht.com/a-/AAuE7mBxIGzZtVzbMIiGLJMN6jnhuXeSlBCMEMK8Nw=s900-mo-c-c0xffffffff-rj-k-no")
+
+p.1 <- sticker(p,
+               package=" ", 
+               s_x = 1, 
+               s_y = 1, 
+               s_width = 1.2, 
+               s_height = 1.2, 
+               p_x = 1, 
+               p_y = .43, 
+               p_size = 6, 
+               p_color = "#FFCB00", 
+               h_size = 3, 
+               h_fill = "#FFFFFF", 
+               h_color = "#FFCB00") 
+p.1
+```
