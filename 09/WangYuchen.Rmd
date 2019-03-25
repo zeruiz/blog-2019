@@ -1,6 +1,6 @@
 ---
 title: "A Series of Tubes..."
-author: "Firstname Lastname"
+author: "Yuchen Wang"
 topic: "09"
 layout: post
 root: ../../../
