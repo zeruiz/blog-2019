@@ -36,8 +36,8 @@ mtcars %>%
 dev.off()
 
 #Save png and pdf using magick
-image_write(fig,"../../blog8/mtcars.png",format = "png")
-image_write(fig,"../../blog8/mtcars.pdf",format = "pdf")
+image_write(fig,"mtcars.png",format = "png")
+image_write(fig,"mtcars.pdf",format = "pdf")
 
 #Save svg using ggsave
 plt <- mtcars %>%
@@ -45,7 +45,7 @@ plt <- mtcars %>%
   geom_point() +
   geom_smooth(method="lm",se = FALSE)
 
-ggsave("../../blog8/mtcars.svg",plot=plt,width=10,height=8)
+ggsave("mtcars.svg",plot=plt,width=10,height=8)
 ```
 
 (I'm not sure where you want the images saved, but I imagine you don't want them in the blog-2019 directory). I see that png and pdf images are quite portable and easy to write. If I were interested in sending an image to a colleague, then I would likely use those. However, an svg file would be useful to store locally so that I would have at least one high-quality copy of the image.

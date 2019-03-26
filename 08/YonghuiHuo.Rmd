@@ -1,0 +1,48 @@
+---
+title: "It's magick!"
+author: "YonghuiHuo"
+topic: "08"
+layout: post
+root: ../../../
+---
+
+## Background:
+
+Image files come in all kinds of formats. There's png, tiff, svg, pdf, just to name a few. What's the difference, and how can we work with them?
+
+Reading: 
+
+  - Identify online sources to read up on differences between image file formats. 
+
+  - The `magick` package allows us to work with raster images in R. Read through the  [magick vignette](https://cran.r-project.org/web/packages/magick/vignettes/intro.html) to learn about the package's functionality.
+
+Write a blog post answering the following questions and detailing the progress: 
+
+1. **Describe the difference between formats png, svg, and pdf. State your sources with (working!) links (take a look at the RMarkdown cheatsheet for RStudio to learn how to make working links). Make one plot in ggplot2 and save it (using R code) in each of the three file formats you discussed. Comment on the differences you observe in their usage.**
+* source: http://socialcompare.com/en/comparison/image-file-formats
+PNG was created to improve GIF image-file format. Removing patent license issues at that time; and removing 256 colors limitation. Pros: Widely accepted format, Lossless Transparency support. Cons: More complex and larger image files can be large, Only supports web colors (RGB), Limited compatibility.
+SVG is an XML based file format. It allows to create vector graphics with animation and interaction support. It can be edited with any text editor. Pros: Can be expanded infinitely without quality loss
+Can be edited with a text editor. Cons:	Support growing but still limited, Not intended for print.
+PDF is a file format used to present documents in a manner independent of application software, hardware, and operating systems. Each PDF file encapsulates a complete description of a fixed-layout flat document, including the text, fonts, graphics, and other information needed to display it. Pros: Lossless
+Protects intellectual property. Maintains printed format. Cons:Longer browser loading times
+Non-editable content. Not great for complex graphics printing. Not really useful as a graphic image.
+
+From the plot saved in my computer, it is obvious that pdf is the most clearest while also take more space.
+```{r}
+library(tidyverse)
+library(magick)
+mydata=diamonds[sample(nrow(diamonds), 1000), ]%>%filter(!color%in%c("J", "I"))
+b=mydata%>%ggplot(aes(x=cut, fill=cut))+geom_bar(aes(weight=depth), width = 1)+
+  coord_polar(theta = "x", start = 0, direction = -1)
+ggsave(file='polar.svg')
+ggsave(file='polar.pdf')
+ggsave(file='polar.png')
+```
+
+2. **Use `magick` functionality to create an image to be used for a hex sticker.**  package `hexSticker` can help you to get started on dimensions of the sticker. **Include all code necessary to produce your sticker.** In case you are using local images, post those in a folder on **your** website and use the URL to link to them.
+```{r}
+library("hexSticker")
+cat <- image_read("https://jpninfo.com/wp-content/uploads/2015/05/japanese-cartoon-1.jpg")
+st <- sticker(cat, package = "cats", s_x = 1, s_y = 1, s_width = 1, s_height = 1, h_fill = "gray")
+st
+```
