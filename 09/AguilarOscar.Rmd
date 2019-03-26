@@ -1,6 +1,6 @@
 ---
 title: "A Series of Tubes..."
-author: "Firstname Lastname"
+author: "Oscar Aguilar"
 topic: "09"
 layout: post
 root: ../../../
@@ -118,11 +118,18 @@ Link:
 3. Compile this Rmarkdown document to HTML, then open the HTML file in a web browser. Open the inspector console for your browser (Ctrl-Shift-I in Chrome, Ctrl-Shift-C in Firefox) and look at the HTML code corresponding to various parts of the document. <br>
 Answer the following questions:
 
-    - What types of tags did you find? 
+   - What types of tags did you find? 
+     
+     I found tags such as line, height and width.
+      
+   - How are code chunks formatted in HTML?
+    
+     R code chunks are with pre class="r" tags. The actual text is stored within a span class="hljs" tag. 
 
-    - How are code chunks formatted in HTML?
-
-    - What differences are there in the HTML markup for R code chunks and R output blocks?
+   - What differences are there in the HTML markup for R code chunks and R output blocks?
+     
+     Code output blocks are stored in a pre tag and the text in another code class="hljs" tag.
+   
 4. In R, the `rvest` package, which is part of the tidyverse, makes it (relatively) easy to pull specific pieces from structured documents. The `html_nodes` function selects nodes using either xpath or css, and additional functions such as `html_attrs`, `html_text`, and `html_table` pull information out of the markup text.<br>
 Choose a Wikipedia page that has at least one image to test the `rvest` package out
 
