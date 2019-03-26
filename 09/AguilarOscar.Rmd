@@ -41,7 +41,80 @@ Read the following sections of w3schools.com's Introduction to XML:
 **Write a blog post answering the following questions and detailing the progress: **
 
 1. The `xml2` R package can be used to work with xml files. Write a function, `current_weather` that accepts a 4-letter airport code (KAMW in the URL here: https://w1.weather.gov/xml/current_obs/KAMW.xml) and returns a data frame with the airport location (station ID, latitude, longitude), last update time, and current weather information (temperature, weather condition, wind speed and direction) at that airport. The `xml2` functions `read_xml`, `xml_children`, `xml_name`, and `xml_text` will be useful. Remember to handle errors and check inputs, and make sure to return a data frame with appropriate data types. 
+
+```{r message = FALSE}
+library(xml2)
+library(tidyverse)
+library(purrr)
+
+current_weather <- function(code){
+  
+  ## Here we conduct a couple of sanity checks
+  if(!is.character(code)){
+    stop('The code should be a character value!')
+  }
+  
+  if(nchar(code) != 4){
+    stop("The code should have 4 characters!")
+  }
+  
+  ## Here we read data and extract some information
+  wdat <- read_xml(paste0("https://w1.weather.gov/xml/current_obs/", code,".xml"))
+  namew <- wdat %>% xml_children %>% xml_name
+  wdatname <- paste0("//", namew[c(6:9, 11, 14:16, 18:20)])
+  data.out <- wdatname %>% purrr::map(xml_find_all, x = wdat) %>% purrr::map_chr(xml_text) %>% t() %>%  data.frame()
+  
+  ## Here we add the names to the variables
+  names(data.out) <- namew[c(6:9, 11, 14:16, 18:20)]
+  
+  ## Here we put the varuables in the appropriate format
+  data.out <- data.out %>% mutate_at(c("location", "station_id", "observation_time_rfc822", "wind_dir"), 
+                                     as.character)
+  
+  data.out <- data.out %>% mutate_at(c("latitude","longitude","temp_f","temp_c","relative_humidity","wind_degrees",
+                                       "wind_mph"), as.character) %>%
+                           mutate_at(c("latitude","longitude","temp_f","temp_c","relative_humidity","wind_degrees",
+                                       "wind_mph"), as.double)
+  
+  ## Here we make sure that we are returning a data frame
+  if(!is.data.frame(data.out)){
+    stop('Error: the output is not a data frame!')
+  }
+  
+  return(data.out)
+}
+
+## Here we check the function
+to.check <- current_weather("KAMW")
+to.check
+```
+
 2. Which HTML tags did you investigate? Describe how to format at least 3 separate pieces of a document using HTML tags.
+
+Color:
+<!--html_preserve-->
+<h1 style="background-color:DodgerBlue; color:white">Machine learning is cool!</h1>
+<!--/html_preserve-->
+
+Table:
+<!--html_preserve-->
+<table style="width:50%">
+  <tr>
+    <th>Academia</th>
+    <th>Industry</th>
+  </tr>
+  <tr>
+    <td>Statistical learning</td>
+    <td>Machine learning</td>
+  </tr>
+</table>
+<!--/html_preserve-->
+
+Link:
+<!--html_preserve-->
+<a href="https://conferences.oreilly.com/strata/strata-ca" target="_blank">STRATA San Francisco</a>
+<!--/html_preserve-->
+
 3. Compile this Rmarkdown document to HTML, then open the HTML file in a web browser. Open the inspector console for your browser (Ctrl-Shift-I in Chrome, Ctrl-Shift-C in Firefox) and look at the HTML code corresponding to various parts of the document. <br>
 Answer the following questions:
 
