@@ -149,16 +149,3 @@ html_nodes(frankie,"table")[1] %>%
 html_table()
 ```
 
-Remember, just because you have the HTML file doesn't mean you should commit it to your git repository!!! Delete the HTML file now if you're going to be tempted to accidentally commit and push it.
-
----
-
-### Going further (Optional Reading): Dynamic Web Pages - Javascript, AJAX, PHP, ASP, and more!
-
-Not all web pages are the same. Static web pages have content that is pre-specified, and when the page is loaded all of the content is just... there. These pages are the easiest to scrape, because the HTML file already contains all of the information needed to render the page. Dynamic web pages have a basic HTML layout, and then scripting languages are used to inject content into the pages at some point after the initial page loads. Using `xml2::read_html()` on these pages will get you a different HTML file than the one you see when loading the page in your browser. 
-
-If you are interested in learning more about how to scrape dynamic web pages, take a look at the `Rselenium` or `splashR` packages. These packages emulate a browser (or launch one for you to control using R), allowing the scripting languages to inject page content before providing you with the updated HTML file containing the information you actually wanted in the first place.
-
-Note: Not all websites which use javascript (or other scripting languages) are difficult to scrape (at this point, practically every web page uses javascript somewhere), but when javascript is used to inject data from a database after the page initially loads, it's likely that you'll have to do a bit more work to get at the data. 
-
-
