@@ -1,0 +1,99 @@
+---
+title: "A Series of Tubes..."
+author: "Yudi Zhang"
+topic: "09"
+layout: post
+root: ../../../
+output: 
+  html_document: 
+    css: extra.css
+---
+
+#1.
+
+```{r}
+library(xml2)
+library(tidyverse)
+current_weather <- function(code) {
+  assertthat::see_if(is.character(code), msg = "Input must be a character")
+  url <- paste0("https://w1.weather.gov/xml/current_obs/", code, ".xml")
+  xml <- read_xml(url)
+  nodeset <- xml %>% xml_children 
+  name <- nodeset %>% xml_name
+  content <- nodeset %>% xml_text
+  dat <- as.data.frame(matrix(content, ncol = length(content), byrow = T), stringsAsFactors = F)
+  colnames(dat) <- name
+  res <- dat %>% dplyr::select(station_id, latitude, longitude, observation_time, 
+                      weather, temperature_string, wind_dir, wind_mph)
+  checkmate::checkDataFrame(res)
+  return(res)
+}
+current_weather("KAMW")
+```
+
+#2. 
+
+I looked at HTML colors. Colors can be specified by names, RGB values, HEX values, HSL values, RGBA values, and HSLA values. And not only the background, the text can have color, the border can also have color! Plus, we can make the color somewhat transpant, just like R.
+
+-lists:
+
+<html>
+<body>
+
+<h2>Where will you do during the spring break?</h2>
+
+<ul style="list-style-type:circle;">
+  <li>Stay at home, do nothing.</li>
+  <li>Stay at home, finish your CC!!!</li>
+  <li>Out of tiwn for fun.</li>
+</ul>  
+
+</body>
+</html>
+
+-color:
+
+<h1 style="border: 2px solid Tomato;">It's Spring Break ;) How about watching a movie???</h1>
+
+-links:
+
+<a href="https://en.wikipedia.org/wiki/Audrey_Hepburn" target="_blank">Audrey's website</a>
+
+#3.
+
+- What types of tags did you find? 
+Background color and color, font size and line height.
+
+- How are code chunks formatted in HTML?
+
+<pre class="r">
+
+- What differences are there in the HTML markup for R code chunks and R output blocks?
+
+In HTML the output starts like this:
+
+<pre>
+<code class="hljs">
+
+Other are quite the same, except that the output of Attaching packages, in R, it generates different colors, but in HTML, it is just black.
+
+#4.
+
+```{r}
+library(rvest)
+library(magrittr)
+url <- "https://en.wikipedia.org/wiki/Audrey_Hepburn"
+
+table <- url %>% 
+  read_html() %>% 
+  html_nodes("table.vcard") %>%
+  html_table(header=F) 
+table %>% pander::pander()
+
+url %>% read_html() %>% 
+  html_node("img") %>% 
+  html_attr(attr="src") %>%
+  paste0("https:",.) %>%
+  magick::image_read()
+```
+
