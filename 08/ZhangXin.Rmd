@@ -79,7 +79,7 @@ Compare the three formats. PNG is the largest and SVG is the smallest. The densi
 2. **Use `magick` functionality to create an image to be used for a hex sticker.**  package `hexSticker` can help you to get started on dimensions of the sticker. **Include all code necessary to produce your sticker.** In case you are using local images, post those in a folder on **your** website and use the URL to link to them.
 
 ```{r}
-sticker_c <- sticker(c, package = "AdsFunnel", p_size=18, p_color = "#f39c12",
+sticker_c <- sticker(c, package = "lalala", p_size=18, p_color = "#f39c12",
              s_x=1, s_y=1, s_width=1.5, s_height = 1.5, 
              h_fill="#FFFFFF", h_color="#f39c12")
 sticker_c 
