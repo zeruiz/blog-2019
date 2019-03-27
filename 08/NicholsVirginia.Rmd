@@ -17,9 +17,10 @@ png and svg both offer transparent backgrounds, pdf does not. png is better than
 
 I made a figure in all three (png, pdf, svg) formats. 
 ```{r, echo = F, warning=F, message=F, results = "hide"}
-
+library(magick)
 library(tidyverse)
 library(svglite)
+library(hexSticker)
 ```
 
 Use **mtcars** to explore this
@@ -97,6 +98,7 @@ sticker(mycomp, package="LunchinatoRs",
 
 Here is what it should spit out for you:
 ```{r spit}
-image_read("https://vanichols.github.io/hexpractice.png")
+#image_read("https://vanichols.github.io/hexpractice.png")
+knitr::include_graphics("https://vanichols.github.io/hexpractice.png")
 ```
 
