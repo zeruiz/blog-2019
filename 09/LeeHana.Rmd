@@ -62,7 +62,7 @@ current_weather("KAMW")
 
 #####2. Which HTML tags did you investigate? Describe how to format at least 3 separate pieces of a document using HTML tags.
 
-- The entire background color can be set as lightyellow color in the <body> tag's style. In addition, the courier font can be applied for the first heading. Lastly, in one paragraph, marking some words with yellow block is available.
+- The entire background color can be set as lightyellow color in the "body" tag's style. In addition, the courier font can be applied for the first heading. Lastly, in one paragraph, marking some words with yellow block is available.
 
 - This is my example:
 
@@ -93,24 +93,24 @@ Answer the following questions:
     html, head, body, div, style, p, pre ,script, code, span, and so on
 
 - How are code chunks formatted in HTML?
-    <pre class = "r">
-      <code class = "hljs">
+    tag: pre class = "r"
+    tag: code class = "hljs"
   
-    display: block;
-    padding: 9.5px;
-    margin: 0 0 10px;
-    font-size: 13px;
-    line-height: 1.42857143;
-    color: #333;
-    word-break: break-all;
-    word-wrap: break-word;
-    background-color: #f5f5f5;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+  display: block;  
+  padding: 9.5px;  
+  margin: 0 0 10px;  
+  font-size: 13px;  
+  line-height: 1.42857143;  
+  color: #333;  
+  word-break: break-all;  
+  word-wrap: break-word;  
+  background-color: #f5f5f5;  
+  border: 1px solid #ccc;  
+  border-radius: 4px;  
 
 - What differences are there in the HTML markup for R code chunks and R output blocks?
 
-    The <span> tag is used to group inline-elements in a document for R code chunks while the R output in the R output blocks is treated as a text. In particular, in R code chunks, the <span> tag is used to group numbers, user defined R function name as keywords, and character strings within quotes as strings while the others are considered a text.
+    The "span" tag is used to group inline-elements in a document for R code chunks while the R output in the R output blocks is treated as a text. In particular, in R code chunks, the "span" tag is used to group numbers, user defined R function name as keywords, and character strings within quotes as strings while the others are considered a text.
     
 
 #####4. In R, the `rvest` package, which is part of the tidyverse, makes it (relatively) easy to pull specific pieces from structured documents. The `html_nodes` function selects nodes using either xpath or css, and additional functions such as `html_attrs`, `html_text`, and `html_table` pull information out of the markup text. Choose a Wikipedia page that has at least one image to test the `rvest` package out
@@ -134,5 +134,3 @@ magick::image_read(as.vector(image.url[[7]][2]))
 Overcast %>% html_nodes("table") 
 Overcast %>% html_table()
 ```
-
-
