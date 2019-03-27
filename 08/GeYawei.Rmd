@@ -32,9 +32,9 @@ p <- mtcars %>%
 
 p
 
-ggsave(file="p.svg", plot=p, width=10, height=10)
-ggsave(file="p.png", plot=p, width=10, height=10)
-ggsave(file="p.pdf", plot=p, width=10, height=10)
+#ggsave(file="p.svg", plot=p, width=10, height=10)
+#ggsave(file="p.png", plot=p, width=10, height=10)
+#ggsave(file="p.pdf", plot=p, width=10, height=10)
 
 
 ```
@@ -54,7 +54,7 @@ picture <- picture %>%
   image_convolve('Sobel') %>%
   image_negate() 
 
-sticker(picture, s_x = 1, s_width = 0.95, s_height = 0.95, package = "elephant", p_color = "black", p_size = 15, h_color = "black", h_fill = "white")
-
+#sticker(picture, s_x = 1, s_width = 0.95, s_height = 0.95, package = "elephant", p_color = "black", p_size = 15, h_color = "black", h_fill = "white")
+knitr::include_graphics("https://yaweige.github.io/post/stickers/elephant.png")
 ```
 
