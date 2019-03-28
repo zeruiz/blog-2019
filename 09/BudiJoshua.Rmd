@@ -35,16 +35,41 @@ current_weather(amesweather)
 
 
 2. test out the html tags
-```{r}
+headings use h1, h2, h3, and so on, css=h1 span  
+images use img, css= a img  
+table use css=div table  
+  
+use `read_html` to read the url, then use `html_nodes` to collect out the components then use `html_text` to parse out just the text of interest
 
-```
+
 
 3.
-a. <code> </code>, <pre> </pre>, <div> </div>
+a. `<code> </code>, <pre> </pre>, <div> </div>`
 b. together for one chunk to appear as customized, based on how it is desired to look like 
 c. xml code chunks are more free and customizable based on coffee. html code chunks more geared towards public showing, not specific templates
 '
 4. rvest 
+```{r echo=TRUE, message=FALSE,  warning=FALSE}
+library(tidyverse)
+library(rvest)
+
+breadfruit <- read_html("https://en.wikipedia.org/wiki/Breadfruit") 
+h2<- breadfruit %>% html_nodes("h2 span") %>%  html_text
+h2
+```
+
+
+```{r echo=TRUE, message=FALSE, warning=FALSE, results='hide'}
+h2a<- h2 %>% subset(h2!="[edit]")
+h2b<- h2a %>% subset(h2a!="[")
+h2c<- h2b %>% subset(h2b!="]")
+```
+
+```{r}
+h2c
+```
+
+
 
 **Write a blog post answering the following questions and detailing the progress: **
 1. The `xml2` R package can be used to work with xml files. Write a function, `current_weather` that accepts a 4-letter airport code (KAMW in the URL here: https://w1.weather.gov/xml/current_obs/KAMW.xml) and returns a data frame with the airport location (station ID, latitude, longitude), last update time, and current weather information (temperature, weather condition, wind speed and direction) at that airport. The `xml2` functions `read_xml`, `xml_children`, `xml_name`, and `xml_text` will be useful. Remember to handle errors and check inputs, and make sure to return a data frame with appropriate data types. 
