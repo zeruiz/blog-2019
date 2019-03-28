@@ -122,26 +122,26 @@ span.note {
 3. Compile this Rmarkdown document to HTML, then open the HTML file in a web browser. Open the inspector console for your browser (Ctrl-Shift-I in Chrome, Ctrl-Shift-C in Firefox) and look at the HTML code corresponding to various parts of the document. <br>
 Answer the following questions:
 
-    - What types of tags did you find? 
+ What types of tags did you find? 
     
-    * <html>: define the whole
-    * <h1>, <h4>: heading for title and author\'s name
-    * <body>: main
-    * <div>: division
-    * <li>: list
-    * <p>: paragraph
-    * <ul>: I guess unit list? 
-    * <pre>: parent node of the `code` node
-    * <code>: code chunk
+* \<html>: define the whole
+* \<h1>, \<h4>: heading for title and author\'s name
+* \<body>: main
+* \<div>: division
+* \<li>: list
+* \<p>: paragraph
+* \<ul>: I guess unit list? 
+* \<pre>: parent node of the `code` node
+* \<code>: code chunk
     
-    - How are code chunks formatted in HTML?
+ How are code chunks formatted in HTML?
     
-    It use  <pre class="r"> or  <pre class="txt"> depend on the designate formate of the code chunk.
+* It use  \<pre class="r"> or  \<pre class="txt"> depend on the designate formate of the code chunk.
 
-    - What differences are there in the HTML markup for R code chunks and R output blocks?
+ What differences are there in the HTML markup for R code chunks and R output blocks?
     
-    * R output blocks is formated with paragrahp using <p>
-    * R code chunks is formated with <pre> and <code>
+* R output blocks is formated with paragrahp using \<p>
+* R code chunks is formated with \<pre> and \<code>
     
 4. In R, the `rvest` package, which is part of the tidyverse, makes it (relatively) easy to pull specific pieces from structured documents. The `html_nodes` function selects nodes using either xpath or css, and additional functions such as `html_attrs`, `html_text`, and `html_table` pull information out of the markup text.<br>
 Choose a Wikipedia page that has at least one image to test the `rvest` package out
@@ -149,11 +149,14 @@ Choose a Wikipedia page that has at least one image to test the `rvest` package 
 ```{r}
 url <- "https://en.wikipedia.org/wiki/List_of_cognitive_biases"
 html <- read_html(url)
-List_of_cognitive_biases <- html %>% html_nodes(".wikitable") %>% html_table() 
-str(List_of_cognitive_biases)
-tempname <- html %>% html_nodes(".mw-headline") %>% html_text
 
-for (i in 1:3) assign(tempname[i], List_of_cognitive_biases[[i]])
+listTable <- html %>% html_nodes(".wikitable") %>% html_table() # scrape table
+tempname <- html %>% html_nodes(".mw-headline") %>% html_text # scrape table name
+tempname <-  gsub('([[:punct:]])|\\s+','_',tempname)
+for (i in 1:3) assign(tempname[i], listTable[[i]]) # assign name to each table
+# view table
+# str(listTable)
+head(get(tempname[1]))
 ```
 
 
