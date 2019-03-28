@@ -57,18 +57,43 @@ library(magick)
 library(hexSticker)
 pickle<-image_read("https://vignette.wikia.nocookie.net/rickandmorty/images/1/19/Pickle_rick_transparent.png")
 cats<-image_read("https://ih0.redbubble.net/image.378606813.7322/raf,750x1000,075,t,101010:01c5ca27c6.jpg")
-#pickle<-image_read("/Users/qinghe/Desktop/R/version control/5Bucks/STAT585/Pickle_rick.png")
-#cats<-image_read("/Users/qinghe/Desktop/R/version control/5Bucks/STAT585/cats.jpg")
-print(pickle)
-print(cats)
-pickle <- image_scale(pickle, "x300")
-cats <- image_scale(cats, "x600")
-img<-c(cats,pickle)
-picklecats<- image_composite(cats, pickle, offset = "+33+40")
-picklecats<-image_crop(picklecats, "350x350")
-picklecats
-sticker <- sticker(picklecats, package="Pickle", s_x = 1,s_y = 1,s_width = 1.2, s_height = 1.2, p_y = 0.5, p_size=20, h_fill = "black")
-sticker
+
+sticker(image_blank(518, 600, color="black"),
+        package="tmp", 
+        h_fill = "black", 
+        p_color= "black",
+        h_color = "#87B13F")
+hexground <- image_read("tmp.png"); hexground
+w <- image_info(hexground)$width
+h <- image_info(hexground)$height
+
+hexground <- image_flatten(c(image_blank(w,h, color="red"),hexground)); hexground
+
+hexground <- hexground %>% 
+  image_transparent("black") %>% 
+  image_transparent("#87B13F"); hexground
+
+cates <- cats %>% 
+  image_scale("518x") %>% 
+  image_crop("518x600+0+0");cates
+
+catsground <- image_flatten(c(cates,hexground)) %>%
+  image_transparent("red"); catsground
+
+pickle <- pickle %>% 
+  image_scale("300x") %>% 
+  image_fill("black","+1+1") %>% 
+  image_transparent("black");pickle
+
+hexpickle <- image_composite(catsground,pickle,
+                             offset = paste0("+",(518-300)/2,"+",(600-397)/2)); hexpickle
+
+sticker(hexpickle, package = "Pickle",
+        p_size = 15, p_y = 0.8, p_color = "white",
+        s_x = 1, s_y = 1, s_width = 2, s_height = 2,
+        h_fill = "gray95", h_color = "aquamarine4", h_size = 3)
+image_read("Pickle.png")
+
 ```
 
 

@@ -1,0 +1,94 @@
+---
+title: "R Notebook"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r message=FALSE}
+library(xml2)
+library(tidyverse)
+
+current_weather <- function(code){
+  checkmate::assertCharacter(code)
+  
+  weatherData <- read_xml(paste0("https://w1.weather.gov/xml/current_obs/",code,".xml")) %>%
+    xml_children() %>%
+    xml_text() %>%
+    .[c(7,8,9,11,14,18,20)] %>%
+    t() %>%
+    data.frame() %>%
+    setNames(c("stationID","lat","long","lastUpdate","temp(F)","windDirection","windSpeed(MPH)"))
+  
+  checkmate::assertDataFrame(weatherData,types = c("numeric", "factor"), min.rows = 1, col.names = "named")
+  weatherData
+}
+
+current_weather("KAMW")
+current_weather("KSTP") #downtown St. Paul code
+```
+
+Color:
+
+<!--html_preserve-->
+<h1 style="background-color:rgb(60, 179, 113);color:Yellow;border:10px dashed #F10909">Joe is cool.</h1>
+<!--/html_preserve-->
+
+Links:
+<!--html_preserve-->
+<style>
+a:link, a:visited {
+  background-color: rgb(60, 179, 113);
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: #F10909;
+}
+</style>
+
+<a href="https://jzemmels.github.io" target="_blank">Cool dude's website</a>
+<!--/html_preserve-->
+
+Tables:
+
+<!--html_preserve-->
+<table style="width:50%">
+  <tr>
+    <th>Language</th>
+    <th>Fact</th>
+  </tr>
+  <tr>
+    <td>English</td>
+    <td>Joe is cool.</td>
+  </tr>
+  <tr>
+    <td>Spanish</td>
+    <td>Joe es guay.</td>
+  </tr>
+  <tr>
+    <td>Yoda</td>
+    <td>Cool Joe is.</td>
+  </tr>
+</table>
+<!--/html_preserve-->
+
+```{r message=FALSE}
+library(rvest)
+joe_cool <- read_html("https://en.wikipedia.org/wiki/Joe_Cool_(song)")
+
+html_node(joe_cool,"img") %>% 
+  xml_attr(attr="src") %>%
+  paste0("https:",.) %>%
+  magick::image_read()
+
+html_nodes(joe_cool,"table")[3] %>%
+  html_attr("class")
+
+html_nodes(joe_cool,"table")[3] %>%
+  html_table()
+```
