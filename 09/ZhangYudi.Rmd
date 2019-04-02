@@ -92,7 +92,7 @@ table %>% pander::pander()
 
 url %>% read_html() %>% 
   html_node("img") %>% 
-  html_attr(attr="src") %>%
+  html_attr("src") %>%
   paste0("https:",.) %>%
   magick::image_read()
 ```
