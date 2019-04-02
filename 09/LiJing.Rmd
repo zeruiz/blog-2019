@@ -60,7 +60,7 @@ Answer the following questions:
 4. In R, the `rvest` package, which is part of the tidyverse, makes it (relatively) easy to pull specific pieces from structured documents. The `html_nodes` function selects nodes using either xpath or css, and additional functions such as `html_attrs`, `html_text`, and `html_table` pull information out of the markup text.<br>
 Choose a Wikipedia page that has at least one image to test the `rvest` package out
 
-```{r}
+```{r, eval = F}
 library(rvest)
 image <- read_html(url) %>% 
   html_nodes("img") %>%
