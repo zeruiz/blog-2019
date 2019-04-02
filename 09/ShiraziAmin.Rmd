@@ -34,7 +34,7 @@ current_weather("KLAX")
 ```
 
 2.**Which HTML tags did you investigate? Describe how to format at least 3 separate pieces of a document using HTML tags.**
-
+````
 body:
 <body>
 
@@ -61,7 +61,7 @@ p {
 Images:
 <h2>HTML Image</h2>
 <img src="pic_trulli.jpg" alt="Trulli" width="500" height="333">
-
+````
 
 3.
 
