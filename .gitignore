@@ -4,10 +4,7 @@
 .Ruserdata
 .html
 .gitignore
-<<<<<<< HEAD
+
 *.Rproj
 */*.html
-=======
-*/*.html
-*.Rproj
->>>>>>> af4449a0820ac887a9733cb25c827d0badd962d6
+
