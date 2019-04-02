@@ -18,9 +18,9 @@ output:
 ```{r}
 library(tidyverse)
 library(xml2)
-current_weather <- function(air){
+current_weather <- function(airport){
   
-  checkmate::assertCharacter(air)
+  checkmate::assertCharacter(airport)
   ## read the data and select corresponding elements
   air <- read_xml(paste0("https://w1.weather.gov/xml/current_obs/", airport, ".xml" ))
   dataname <- air %>% xml_children() %>% xml_name() %>% .[c(7, 8, 9, 10, 14, 15, 20, 18)]
@@ -46,12 +46,12 @@ current_weather("KCNC")
 
 
 Title, Image and Document
-
+````
 Title: <p><abbr title="World Health Organization">WHO</abbr>
 Image:  <img src="smiley.gif" alt="Smiley face" height="42" width="42"> 
 Document:  <H1>This is a top level heading</H1> Here is some text.
 <H2>Second level heading</H2> Here is some more text.
-
+````
 
 3. Compile this Rmarkdown document to HTML, then open the HTML file in a web browser. Open the inspector console for your browser (Ctrl-Shift-I in Chrome, Ctrl-Shift-C in Firefox) and look at the HTML code corresponding to various parts of the document. <br>
 Answer the following questions:
