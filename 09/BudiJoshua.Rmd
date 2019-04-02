@@ -13,7 +13,7 @@ output:
 the function
 ```{r echo=TRUE, message=FALSE, warning=FALSE}
 library(xml2)
-
+library(tidyverse)
 current_weather <- function(url){
   xmlhead <-xml2::read_xml(url)
   long = NULL 
