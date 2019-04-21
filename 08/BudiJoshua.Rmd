@@ -1,0 +1,83 @@
+---
+title: "It's magick!"
+author: "Budi Joshua"
+root: ../../../
+layout: post
+topic: 08
+---
+
+## Background:
+
+Image files come in all kinds of formats. There's png, tiff, svg, pdf, just to name a few. What's the difference, and how can we work with them?
+
+Reading: 
+
+  - Identify online sources to read up on differences between image file formats. 
+
+  - The `magick` package allows us to work with raster images in R. Read through the  [magick vignette](https://cran.r-project.org/web/packages/magick/vignettes/intro.html) to learn about the package's functionality.
+
+Write a blog post answering the following questions and detailing the progress: 
+
+1. **Describe the difference between formats png, svg, and pdf. State your sources with (working!) links (take a look at the RMarkdown cheatsheet for RStudio to learn how to make working links). Make one plot in ggplot2 and save it (using R code) in each of the three file formats you discussed. Comment on the differences you observe in their usage.**
+
+SVG (Scalable vector graphic) image format is usually used for websites. It is suitable to be projected in devices with high pixels without suppressing image quality when compressed or stretched.   
+PDF (Portable Document File) image format are suitable to be printed out and exchanged between different users. It is easy to transfer using emails or upload/download since the document size is usually small. It can be viewed either using AdobePDF or browser, therefore very wide-range of use.   
+PNG (Portable Network Graphics) image format is the best in preserving quality compared to SVG and PDF, especially when there is a mixture of art and text. Therefore, the file size gets bigger as well. An interesting feature is that it can include transparency and fading effect, such like GIF.   
+source: 95visual.com (https://www.95visual.com/blog/svg-pdf-jpg-png-whats-the-difference)
+
+```{r include=FALSE, message=FALSE}
+library(dplyr)
+str(CO2)
+library(Rmisc)
+
+CO2.summ<- summarySE(CO2, measurevar="uptake", groupvars=c("Type","Treatment"))
+```
+
+```{r echo=FALSE}
+barplot <- ggplot(CO2.summ, aes(Type, uptake, fill=Treatment)) +
+  geom_bar(stat="identity", position="dodge")+
+  ggtitle("CO2 uptake of grasses, cold tolerance of Echinochloa crus-galli")
+barplot
+```
+
+```{r message=FALSE, include=FALSE}
+ggsave("co2grass.pdf")
+library("svglite")
+ggsave("co2grass.svg")
+ggsave("co2grass.jpeg")
+```
+
+
+2. **Use `magick` functionality to create an image to be used for a hex sticker.**  package `hexSticker` can help you to get started on dimensions of the sticker. **Include all code necessary to produce your sticker.** In case you are using local images, post those in a folder on **your** website and use the URL to link to them.
+
+```{r message=FALSE, warning=FALSE}
+library(magick)
+library(hexSticker)
+```
+
+```{r message=FALSE}
+hex<- hexagon(size=1.2, fill="#003000")
+
+bfr <- image_read("https://joeybudi.github.io/images/breadfruit2.png") 
+bfr
+bfr2 <- bfr %>%
+  image_scale("300") %>%
+  image_crop("300x300+0+0")
+bfr2
+```
+
+```{r}
+bfr_sticker <- sticker(bfr2, 
+                       s_width=1.2, 
+                       s_height=1.2, 
+                       s_x=1, 
+                       s_y=1.1, 
+                       p_y=0.5, 
+                       package="breadfruit",
+                       p_color="black",
+                       h_fill="#ffffff", 
+                       h_color="#028213")
+
+bfr_sticker
+```
+
